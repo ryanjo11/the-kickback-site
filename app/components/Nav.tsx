@@ -9,6 +9,7 @@ const links = [
   { href: "/atlanta", label: "Atlanta" },
   { href: "/schedule", label: "Schedule" },
   { href: "/tickets", label: "Tickets" },
+  { href: "/partners", label: "Partners" },
   { href: "https://www.cxm.co/", label: "cxm.co", external: true },
 ];
 

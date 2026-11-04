@@ -108,13 +108,6 @@ const days: Day[] = [
         viewers: "2.4k",
         speakers: tbaPanel,
       },
-      {
-        time: "9:00 – 11:00 PM",
-        timeMono: "9:00 PM",
-        title: "Open Mixer + Networking",
-        kind: "mixer",
-        viewers: "3.5k",
-      },
     ],
   },
   {
@@ -177,7 +170,6 @@ const days: Day[] = [
       "Trading Card Games",
       "Streetwear + Sneaker Vendors",
       "Creator Lounge",
-      "Creator Headshots",
     ],
     parallel: {
       code: "LVL_03",
@@ -346,7 +338,7 @@ function DayStream({
 
       {/* Venue strip */}
       <div className="px-4 py-2 border-b border-white/10 font-mono text-[10px] uppercase tracking-widest text-frost/60">
-        <span className="text-ice">▸ channel</span> · {d.venue} · {d.code}
+        <span className="text-ice">▸ channel</span> · {d.venue}
       </div>
 
       {/* NOW STREAMING featured block */}
@@ -398,15 +390,10 @@ function DayStream({
       )}
 
       {/* UP NEXT list */}
-      <div className="px-4 py-3 border-b border-white/10 bg-ink-soft/50 flex items-center justify-between">
+      <div className="px-4 py-3 border-b border-white/10 bg-ink-soft/50">
         <div className="font-mono text-[10px] uppercase tracking-widest text-frost/70">
           ▸ up next / schedule
         </div>
-        {wide && (
-          <div className="font-mono text-[10px] uppercase tracking-widest text-ice">
-            {rest.length} slots
-          </div>
-        )}
       </div>
       <ul
         className={
@@ -655,10 +642,6 @@ export default function SchedulePage() {
                         <div className="font-mono text-[10px] uppercase tracking-widest text-frost/70 hidden md:block">
                           ▸ {d.venue}
                         </div>
-                      </div>
-                      <div className="font-mono text-[10px] uppercase tracking-widest text-frost/60 text-right">
-                        <div>{d.items.length} slots</div>
-                        <div style={{ color: accent }}>● {d.code}</div>
                       </div>
                     </div>
 
