@@ -15,29 +15,6 @@ export const metadata = {
     "The Kickback rolls into Atlanta December 11–13, 2026. Three nights. Opening at LVRN Studios, Night Two at SkateATL, Night Three at The Tabernacle in downtown Atlanta. Gaming, music, and creator culture. Coming soon.",
 };
 
-type Expect = {
-  title: string;
-  detail: string;
-};
-
-const whatToExpect: Expect[] = [
-  {
-    title: "Conversations",
-    detail:
-      "Back-to-back panels with the creators, executives, and tastemakers building across gaming, music, anime, and entertainment.",
-  },
-  {
-    title: "The Kickback Tournament",
-    detail:
-      "ProAm main-stage gaming tournament. Creators vs. community. Games and prize pool announcing soon.",
-  },
-  {
-    title: "Concert Experience",
-    detail:
-      "Headlining set + emerging talent. Lineup dropping soon.",
-  },
-];
-
 export default function AtlantaPage() {
   return (
     <>
@@ -107,45 +84,6 @@ export default function AtlantaPage() {
           </div>
         </section>
 
-        {/* What to expect */}
-        <section className="py-24 md:py-28">
-          <div className="max-w-6xl mx-auto px-6 md:px-10">
-            <p className="eyebrow mb-4">What to Expect</p>
-            <h2 className="font-display text-5xl md:text-6xl uppercase leading-[0.95] mb-12">
-              Three nights.
-              <br />
-              <span className="text-ice">One kickback.</span>
-            </h2>
-
-            <div className="grid md:grid-cols-3 gap-6">
-              {whatToExpect.map((item) => (
-                <div
-                  key={item.title}
-                  className="rounded-3xl border border-white/12 bg-ink-soft/60 p-6 md:p-8"
-                >
-                  <div className="flex items-start justify-between gap-4 mb-4">
-                    <h3 className="font-display text-2xl md:text-3xl uppercase leading-tight">
-                      {item.title}
-                    </h3>
-                    <span className="shrink-0 font-mono text-[10px] uppercase tracking-[0.25em] text-frost/40">
-                      0{whatToExpect.indexOf(item) + 1}
-                    </span>
-                  </div>
-                  <p className="text-sm text-frost/70 leading-relaxed">
-                    {item.detail}
-                  </p>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-10 rounded-2xl border border-white/10 bg-ink/60 p-6 text-center">
-              <p className="text-sm uppercase tracking-[0.25em] text-frost/70">
-                Full run of show, speakers, and lineup announcing soon
-              </p>
-            </div>
-          </div>
-        </section>
-
         {/* Opening Night Venue — LVRN Studios */}
         <section className="py-24 md:py-28">
           <div className="max-w-7xl mx-auto px-6 md:px-10">
@@ -155,8 +93,8 @@ export default function AtlantaPage() {
                 Fri · <span className="text-ice">LVRN Studios</span>.
               </h2>
               <p className="mt-6 text-frost/70 max-w-2xl mx-auto">
-                Creator State of the Union at Love Renaissance's Atlanta studio.
-                The rooms where music, creator culture, and the next wave meet.
+                Creator State of the Union at Love Renaissance&apos;s Atlanta
+                studio.
               </p>
             </div>
 
@@ -202,7 +140,7 @@ export default function AtlantaPage() {
                 <div className="eyebrow mb-2">Entry</div>
                 <div className="font-display text-xl uppercase">$10</div>
                 <div className="text-sm text-frost/65 mt-1">
-                  Industry + ticketed
+                  Ticketed
                 </div>
               </div>
             </div>
@@ -280,7 +218,7 @@ export default function AtlantaPage() {
               </h2>
               <p className="mt-6 text-frost/70 max-w-2xl mx-auto">
                 A former church turned iconic Atlanta music hall. Multi-tier,
-                2,600+ capacity, built for high-energy nights in the heart of
+                2,200 capacity, built for high-energy nights in the heart of
                 downtown ATL.
               </p>
             </div>
@@ -322,7 +260,7 @@ export default function AtlantaPage() {
               </div>
               <div className="rounded-2xl border border-white/10 bg-ink-soft p-5">
                 <div className="eyebrow mb-2">Capacity</div>
-                <div className="font-display text-xl uppercase">2,600+</div>
+                <div className="font-display text-xl uppercase">2,200</div>
                 <div className="text-sm text-frost/65 mt-1">
                   Floor + multi-tier balcony
                 </div>

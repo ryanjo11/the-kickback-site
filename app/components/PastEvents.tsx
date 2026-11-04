@@ -86,25 +86,6 @@ function PhotoCard({ shot }: { shot: Shot }) {
         style={{ objectPosition: shot.objectPosition || "center" }}
         sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
       />
-      {/* Timestamp tag top-left */}
-      {shot.tag && (
-        <div
-          className={`absolute top-2 left-2 font-mono text-[9px] uppercase tracking-[0.25em] px-2 py-1 rounded ${a.bg} ${a.text} border ${a.border}`}
-        >
-          {shot.tag}
-        </div>
-      )}
-      {/* Caption bar bottom */}
-      <figcaption className="absolute bottom-0 inset-x-0 p-2 bg-gradient-to-t from-ink via-ink/80 to-transparent">
-        <div className="flex items-center justify-between gap-2">
-          <span className="font-display text-xs md:text-sm uppercase tracking-wide text-frost">
-            {shot.caption}
-          </span>
-          <span className={`font-mono text-[9px] uppercase tracking-widest ${a.text}`}>
-            {shot.location}
-          </span>
-        </div>
-      </figcaption>
     </figure>
   );
 }
@@ -142,16 +123,6 @@ export default function PastEvents() {
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-transparent" />
-        <div className="absolute top-6 left-6 md:left-10 font-mono text-[10px] uppercase tracking-[0.3em] flex items-center gap-2">
-          <span className="text-[#BDE0F8]">● REC</span>
-          <span className="text-frost/50">/</span>
-          <span className="text-frost/80">atl · 2024</span>
-        </div>
-        <div className="absolute bottom-8 left-6 md:left-10 max-w-xl">
-          <div className="font-display text-3xl md:text-5xl uppercase leading-none">
-            Main stage. <span className="text-[#BDE0F8]">Lights up.</span>
-          </div>
-        </div>
       </div>
 
       {/* Tilted collage */}

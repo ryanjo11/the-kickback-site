@@ -11,20 +11,12 @@ export default function Hero() {
       <HeroVideo />
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-ink/20 to-ink" />
 
-      {/* REC tag top-left */}
-      <div className="absolute top-40 left-6 md:left-10 z-10 font-mono text-[10px] uppercase tracking-[0.3em] flex items-center gap-2">
-        <span className="text-[#BDE0F8]">● REC</span>
-        <span className="text-frost/40">/</span>
-        <span className="text-frost/60">cxmmunity media presents</span>
-      </div>
-
-      {/* Timestamp tag top-right */}
-      <div className="absolute top-40 right-6 md:right-10 z-10 font-mono text-[10px] uppercase tracking-[0.3em] text-frost/60">
-        atl.next → 12.11.26
-      </div>
-
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 pt-52 md:pt-56 pb-24 flex flex-col items-center text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 pt-40 md:pt-48 pb-24 flex flex-col items-center text-center">
+        <p className="font-mono text-[11px] md:text-xs uppercase tracking-[0.4em] text-[#BDE0F8] mb-6">
+          Cxmmunity Media Presents
+        </p>
+
         <h1 className="w-full max-w-4xl">
           <Image
             src="/kickback-logo.png"
@@ -41,8 +33,8 @@ export default function Hero() {
         </p>
 
         <p className="mt-6 text-lg md:text-xl text-ice-soft/85 max-w-2xl leading-relaxed">
-          The tour built for the next generation of creators, players, and
-          culture shifters.
+          The tour built for the next generation of creators, streamers,
+          gamers, and culture shifters.
         </p>
 
         {/* Next-event chip */}

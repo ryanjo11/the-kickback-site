@@ -9,7 +9,17 @@ export default function Community() {
   function onSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!email.includes("@")) return;
-    // Stub. Wire to ConvertKit / Mailchimp / Beehiiv later.
+    // ⚠ CAPTURE NOT YET WIRED. Emails submitted here are NOT stored anywhere.
+    // Next step: wire this handler to a real endpoint (Formspree / Resend /
+    // Mailchimp / Beehiiv) before go-live so submissions aren't lost.
+    // Open ticket: Get on the List form capture.
+    if (typeof window !== "undefined") {
+      console.warn(
+        "[Kickback] Email submitted but not stored:",
+        email,
+        "— wire the Community form to a real service before launch."
+      );
+    }
     setSubmitted(true);
   }
 

@@ -35,11 +35,6 @@ export default function Talent() {
               Past Performing <span className="text-ice">Talent</span>
             </h2>
           </div>
-          <p className="text-frost/70 max-w-md text-base md:text-lg">
-            Touring acts. Emerging voices. Always genre-bending. The Kickback
-            mainstage is where alternative Black music meets the room that
-            actually shows up for it.
-          </p>
         </div>
       </div>
 

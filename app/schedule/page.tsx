@@ -36,10 +36,10 @@ type ScheduleItem = {
 };
 
 const tbaPanel: Speaker[] = [
-  { role: "moderator", name: "Moderator TBA", title: "Role TBA", company: "Company TBA" },
-  { role: "speaker", name: "Speaker TBA", title: "Role TBA", company: "Company TBA" },
-  { role: "speaker", name: "Speaker TBA", title: "Role TBA", company: "Company TBA" },
-  { role: "speaker", name: "Speaker TBA", title: "Role TBA", company: "Company TBA" },
+  { role: "moderator", name: "Speakers to be announced soon", title: "", company: "" },
+  { role: "speaker", name: "Speakers to be announced soon", title: "", company: "" },
+  { role: "speaker", name: "Speakers to be announced soon", title: "", company: "" },
+  { role: "speaker", name: "Speakers to be announced soon", title: "", company: "" },
 ];
 
 type ParallelTrack = {
@@ -186,7 +186,7 @@ const days: Day[] = [
       code: "LVL_03",
       label: "Executive Room",
       location: "The Tabernacle · Third Floor",
-      note: "Invite-only workshops running parallel to the mainstage. Executives, founders, and decision-makers only.",
+      note: "Workshops running on the third floor for executives, founders, and decision-makers.",
       items: [
         {
           time: "12:30 – 1:30 PM",
@@ -215,48 +215,57 @@ const days: Day[] = [
         kind: "logistics",
       },
       {
-        time: "12:00 – 2:00 PM",
+        time: "12:00 – 12:30 PM",
         timeMono: "12:00 PM",
-        title: "DJ Sets",
-        note: "DJ lineup announcing soon.",
-        kind: "concert",
-        viewers: "6.4k",
+        title: "Kickback Welcome",
+        note: "Opening remarks + welcome to The Kickback Atlanta.",
+        kind: "creator",
+        viewers: "4.5k",
       },
       {
-        time: "2:00 – 3:00 PM",
-        timeMono: "2:00 PM",
+        time: "1:00 – 2:00 PM",
+        timeMono: "1:00 PM",
         title: "Creator All-Star Game",
         note: "Your favorite creators pick sides and go to war on the main stage. Trash talk on, gloves off — no scripts, just gameplay.",
         kind: "creator",
         viewers: "12k",
       },
       {
-        time: "3:30 – 3:45 PM",
-        timeMono: "3:30 PM",
-        title: "Spelman Game Jam Acknowledgement",
-        note: "A live spotlight on the students behind the Spelman Game Jam — recognizing the developers, designers, and creators representing HBCU game dev.",
-        kind: "creator",
-        viewers: "2.5k",
-      },
-      {
-        time: "4:00 – 4:45 PM",
-        timeMono: "4:00 PM",
+        time: "2:30 – 3:15 PM",
+        timeMono: "2:30 PM",
         title: "No Spoilers Podcast Presents: Anime Debates",
         note: "Hosted by Troop & Slim Jxmmi. Creators, cosplayers, and comics face off on stage — no script, all bars, all chaos.",
         kind: "creator",
         viewers: "8.5k",
       },
       {
-        time: "5:00 – 5:30 PM",
-        timeMono: "5:00 PM",
+        time: "3:00 – 3:30 PM",
+        timeMono: "3:00 PM",
+        title: "Panel",
+        note: "Title, speakers, and moderator announcing soon.",
+        kind: "panel",
+        viewers: "6.1k",
+        speakers: tbaPanel,
+      },
+      {
+        time: "3:45 – 4:00 PM",
+        timeMono: "3:45 PM",
+        title: "Spelman Women",
+        note: "A live spotlight on the Spelman women driving the next wave of HBCU creator culture, game dev, and community.",
+        kind: "creator",
+        viewers: "3.2k",
+      },
+      {
+        time: "4:30 – 5:00 PM",
+        timeMono: "4:30 PM",
         title: "Cosplay Competition",
         note: "The main stage becomes a runway. Cosplayers battle for the crown — judges, prizes, and full-crowd energy.",
         kind: "creator",
         viewers: "22k",
       },
       {
-        time: "5:30 – 6:00 PM",
-        timeMono: "5:30 PM",
+        time: "5:15 – 5:45 PM",
+        timeMono: "5:15 PM",
         title: "Bae Brigade",
         note: "Details announcing soon.",
         kind: "creator",
@@ -270,18 +279,17 @@ const days: Day[] = [
         kind: "logistics",
       },
       {
-        time: "7:00 – 8:00 PM",
+        time: "7:00 PM",
         timeMono: "7:00 PM",
-        title: "Concert · DJ Set",
-        note: "The room turns into a concert hall. Opening DJ set to warm the crowd for the night ahead.",
-        kind: "concert",
-        viewers: "15k",
+        title: "Doors Open · Concert",
+        note: "Doors re-open for the concert experience.",
+        kind: "logistics",
       },
       {
-        time: "8:00 – 11:00 PM",
-        timeMono: "8:00 PM",
+        time: "7:00 – 11:30 PM",
+        timeMono: "7:00 PM",
         title: "DJ Sets + Artist Performances",
-        note: "The finale. Rotating DJ sets, headline artist performance, and emerging talent. Three hours of full-volume energy to close out The Kickback. Headline artist announcing soon.",
+        note: "The finale. Rotating DJ sets, headline artist performance, and emerging talent. Four and a half hours of full-volume energy to close out The Kickback. Headline artist announcing soon.",
         kind: "concert",
         viewers: "45k",
       },
@@ -377,7 +385,7 @@ function DayStream({
       {d.allDay && d.allDay.length > 0 && (
         <div className="px-4 py-3 border-b border-white/10 bg-ice/[0.03]">
           <div className="font-mono text-[10px] uppercase tracking-widest text-ice mb-2">
-            ◉ 24/7 channels · doors → close
+            ◉ open all day · doors → close
           </div>
           <div className="flex flex-wrap gap-1.5">
             {d.allDay.map((a) => (
@@ -496,23 +504,15 @@ function DayStream({
       {/* Parallel stream (Level 3) */}
       {d.parallel && (
         <div className="border-t-2 border-[#FF3E88]/50 bg-[#FF3E88]/[0.05]">
-          <div className="px-4 py-3 border-b border-[#FF3E88]/30 flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="w-2 h-2 bg-[#FF3E88] rounded-full animate-pulse" />
-              <div>
-                <div className="font-mono text-[10px] uppercase tracking-widest text-[#FF3E88] font-bold">
-                  parallel stream · {d.parallel.code}
-                </div>
-                <div className="font-display text-base md:text-lg uppercase leading-none mt-0.5">
-                  {d.parallel.label}
-                </div>
-                <div className="font-mono text-[10px] text-frost/50 uppercase tracking-widest mt-0.5">
-                  ▸ {d.parallel.location}
-                </div>
+          <div className="px-4 py-3 border-b border-[#FF3E88]/30 flex items-center gap-3">
+            <div className="w-2 h-2 bg-[#FF3E88] rounded-full animate-pulse" />
+            <div>
+              <div className="font-display text-base md:text-lg uppercase leading-none">
+                {d.parallel.label}
               </div>
-            </div>
-            <div className="font-mono text-[9px] uppercase tracking-widest text-[#FF3E88]">
-              ◉ invite only
+              <div className="font-mono text-[10px] text-frost/50 uppercase tracking-widest mt-0.5">
+                ▸ {d.parallel.location}
+              </div>
             </div>
           </div>
           <ul className="divide-y divide-white/10">
@@ -655,7 +655,7 @@ export default function SchedulePage() {
                     {d.allDay && d.allDay.length > 0 && (
                       <div className="px-5 py-4 border-b border-white/10 bg-ice/[0.02]">
                         <div className="font-mono text-[10px] uppercase tracking-widest text-ice mb-2">
-                          ◉ 24/7 channels · doors → close
+                          ◉ open all day · doors → close
                         </div>
                         <div className="flex flex-wrap gap-1.5">
                           {d.allDay.map((a) => (
@@ -749,23 +749,15 @@ export default function SchedulePage() {
                     {/* Parallel track — Sunday Level 3 */}
                     {d.parallel && (
                       <div className="border-t-2 border-[#FF3E88]/50 bg-[#FF3E88]/[0.05]">
-                        <div className="px-5 py-4 border-b border-[#FF3E88]/30 flex items-start justify-between gap-3">
-                          <div className="flex items-start gap-3">
-                            <span className="w-2 h-2 bg-[#FF3E88] rounded-full animate-pulse mt-1" />
-                            <div>
-                              <div className="font-mono text-[10px] uppercase tracking-widest text-[#FF3E88] font-bold">
-                                parallel stream · {d.parallel.code}
-                              </div>
-                              <div className="font-display text-lg md:text-xl uppercase leading-none mt-0.5">
-                                {d.parallel.label}
-                              </div>
-                              <div className="font-mono text-[10px] text-frost/60 uppercase tracking-widest mt-0.5">
-                                ▸ {d.parallel.location}
-                              </div>
+                        <div className="px-5 py-4 border-b border-[#FF3E88]/30 flex items-start gap-3">
+                          <span className="w-2 h-2 bg-[#FF3E88] rounded-full animate-pulse mt-1.5" />
+                          <div>
+                            <div className="font-display text-lg md:text-xl uppercase leading-none">
+                              {d.parallel.label}
                             </div>
-                          </div>
-                          <div className="font-mono text-[9px] uppercase tracking-widest text-[#FF3E88] shrink-0">
-                            ◉ invite only
+                            <div className="font-mono text-[10px] text-frost/60 uppercase tracking-widest mt-0.5">
+                              ▸ {d.parallel.location}
+                            </div>
                           </div>
                         </div>
                         <ul className="divide-y divide-white/10">

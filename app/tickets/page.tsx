@@ -405,9 +405,92 @@ function tierColor(t: MatrixTier) {
   return "#BDE0F8";
 }
 
+function TicketMatrixMobile() {
+  return (
+    <div className="md:hidden space-y-4">
+      {matrixTiers.map((t) => {
+        const color = tierColor(t);
+        const includedFeatures = matrixFeatures.filter((f) => t.features[f.key]);
+        return (
+          <div
+            key={t.code}
+            className={`border-2 bg-black p-4 ${
+              t.best ? "border-ice bg-ice/[0.04]" : "border-ice/30"
+            }`}
+          >
+            {/* Header */}
+            <div className="flex items-start justify-between gap-3 pb-3 border-b border-white/10">
+              <div>
+                <div
+                  className="font-mono text-[9px] uppercase tracking-widest mb-1"
+                  style={{ color }}
+                >
+                  ● {t.day} · {t.dayDate} · {t.code}
+                </div>
+                <div className="font-display text-xl uppercase leading-none">
+                  {t.name}
+                </div>
+                <div className="font-mono text-[10px] uppercase tracking-widest text-frost/50 mt-1">
+                  {t.window}
+                </div>
+              </div>
+              <div
+                className="font-display text-3xl leading-none shrink-0"
+                style={{ color, letterSpacing: "-0.02em" }}
+              >
+                {t.price}
+              </div>
+            </div>
+
+            {/* Best value tag */}
+            {t.best && (
+              <div className="pt-3 font-mono text-[9px] uppercase tracking-widest text-ice font-bold">
+                ★ BEST VALUE
+              </div>
+            )}
+
+            {/* Includes */}
+            <div className="pt-3">
+              <div className="font-mono text-[9px] uppercase tracking-widest text-frost/40 mb-2">
+                includes
+              </div>
+              <ul className="space-y-1.5">
+                {includedFeatures.map((f) => (
+                  <li
+                    key={f.key}
+                    className="flex items-start gap-2 text-xs text-frost/80 font-mono leading-snug"
+                  >
+                    <span style={{ color }} className="shrink-0">
+                      ✓
+                    </span>
+                    <span>{f.label}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Status */}
+            <div className="pt-3 mt-3 border-t border-white/10">
+              {t.price === "FREE" ? (
+                <span className="font-mono text-[9px] uppercase tracking-widest text-ice">
+                  ● RSVP SOON
+                </span>
+              ) : (
+                <span className="font-mono text-[9px] uppercase tracking-widest text-[#FF3E88]">
+                  ● ON SALE SOON
+                </span>
+              )}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
 function TicketMatrix() {
   return (
-    <div className="border-2 border-ice/40 overflow-x-auto bg-black">
+    <div className="hidden md:block border-2 border-ice/40 overflow-x-auto bg-black">
       <table className="w-full border-collapse" style={{ minWidth: "860px" }}>
         <thead>
           {/* Day row (grouping header) */}
@@ -539,7 +622,7 @@ export default function TicketsPage() {
       <Nav />
       <main className="bg-ink text-frost">
         {/* Page intro — photo-led */}
-        <section className="relative pt-44 pb-20 md:pt-52 md:pb-28 overflow-hidden grain min-h-[65vh] flex items-center">
+        <section className="relative pt-32 pb-16 md:pt-52 md:pb-28 overflow-hidden grain min-h-[55vh] md:min-h-[65vh] flex items-center">
           <Image
             src="/past-events/cyw-kickback-411.jpg"
             alt="Past Kickback crowd"
@@ -561,7 +644,7 @@ export default function TicketsPage() {
               The <span className="text-ice">tickets.</span>
             </h1>
             <p className="mt-6 max-w-xl text-frost/70 leading-relaxed">
-              Three nights. Opening free at the skate park. Seven ways to pull up. Pricing is in progress —
+              Three nights. Seven ways to pull up. Pricing is in progress —
               subscribe for the presale drop.
             </p>
           </div>
@@ -577,6 +660,7 @@ export default function TicketsPage() {
               <span className="text-frost/60">7 ways in · 3 nights</span>
             </div>
 
+            <TicketMatrixMobile />
             <TicketMatrix />
 
             {/* Value note */}
