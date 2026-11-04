@@ -10,39 +10,6 @@ export const metadata = {
     "Plug your brand into The Kickback. Gaming, music, and creator culture across multiple cities. Request the 2025/26 partnership deck.",
 };
 
-const integrations = [
-  {
-    title: "Presenting Sponsor",
-    blurb:
-      "Lock in across all tour stops. Title naming on tournaments, stages, and broadcast extensions.",
-  },
-  {
-    title: "Gaming Lounge & Tournament",
-    blurb:
-      "Anchor the consumer-facing gaming experience. Playstations, ProAm tournament, branded jerseys, free-play activations.",
-  },
-  {
-    title: "Concert Experience",
-    blurb:
-      "Stage-adjacent presence at the headline moment of the night. A-list talent against your brand.",
-  },
-  {
-    title: "Panels & Fireside Chats",
-    blurb:
-      "Center your brand in the cultural conversations. LED panels, logo integration, and panelist seats.",
-  },
-  {
-    title: "Branded Experiential",
-    blurb:
-      "Custom on-site activations purpose-built to live inside The Kickback world.",
-  },
-  {
-    title: "Creator Content Series",
-    blurb:
-      "Pre and post event content edited with your brand integrated authentically into the storyline.",
-  },
-];
-
 const pastBrands = [
   "XFINITY",
   "MICROSOFT",
@@ -90,37 +57,6 @@ export default function PartnersPage() {
               >
                 ← Back
               </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* Integrations */}
-        <section className="py-24 md:py-32">
-          <div className="max-w-7xl mx-auto px-6 md:px-10">
-            <p className="eyebrow mb-4">Integration Opportunities</p>
-            <h2 className="font-display text-5xl md:text-6xl uppercase leading-[0.95] mb-14">
-              Plug in <span className="text-ice">anywhere.</span>
-            </h2>
-
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {integrations.map((i, idx) => (
-                <article
-                  key={i.title}
-                  className="lift rounded-3xl border border-white/12 bg-ink-soft p-8 min-h-[240px] flex flex-col justify-between"
-                >
-                  <div className="font-display text-3xl text-ice/80">
-                    {String(idx + 1).padStart(2, "0")}
-                  </div>
-                  <div>
-                    <h3 className="font-display text-2xl uppercase leading-tight">
-                      {i.title}
-                    </h3>
-                    <p className="mt-3 text-frost/75 text-sm leading-relaxed">
-                      {i.blurb}
-                    </p>
-                  </div>
-                </article>
-              ))}
             </div>
           </div>
         </section>
