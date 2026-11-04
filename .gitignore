@@ -39,3 +39,16 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# claude code local config
+.claude/
+
+# design mockups — local only, do not deploy
+/app/preview-2/
+/app/preview-3/
+/app/preview-4/
+/app/preview-5/
+/app/preview-6/
+/app/preview-7/
+/app/preview-8/
+/app/preview-ideas/

@@ -1,26 +1,146 @@
 @import "tailwindcss";
 
+@theme {
+  --color-ink: #000000;
+  --color-ink-soft: #050813;
+  --color-royal: #1b5fb5;
+  --color-royal-deep: #0b3a78;
+  --color-ice: #bde0f8;
+  --color-ice-soft: #e7f3fc;
+  --color-frost: #ffffff;
+  --color-spark: #7cc4f5;
+  --color-acid: #b4ff39;
+  --color-hot: #ff3e88;
+
+  --font-display: "Anton", "Arial Black", sans-serif;
+  --font-body: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-script: "Caveat Brush", "Brush Script MT", cursive;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: var(--color-ink);
+  --foreground: var(--color-frost);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+html,
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-ink);
+  color: var(--color-frost);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
+
+::selection {
+  background: var(--color-royal);
+  color: var(--color-frost);
+}
+
+/* ---------- utilities ---------- */
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: 0.01em;
+}
+
+.font-script {
+  font-family: var(--font-script);
+}
+
+.text-stroke {
+  -webkit-text-stroke: 1px var(--color-frost);
+  color: transparent;
+}
+
+/* Film-grain noise overlay */
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.06;
+  mix-blend-mode: screen;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='160' height='160' filter='url(%23n)' opacity='0.6'/></svg>");
+}
+
+/* Marquee scroll */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-25%); }
+}
+@keyframes marquee-slow {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-16.6667%); }
+}
+.marquee {
+  display: flex;
+  gap: 3rem;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+.animate-marquee-slow {
+  animation: marquee-slow 60s linear infinite;
+}
+
+/* Subtle hover lift */
+.lift {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.lift:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-ice);
+}
+
+/* Glow ring for primary buttons */
+.btn-primary {
+  background: var(--color-frost);
+  color: var(--color-ink);
+  box-shadow:
+    0 0 0 1px var(--color-frost),
+    0 8px 30px -10px rgba(189, 224, 248, 0.7),
+    0 0 28px -6px rgba(124, 196, 245, 0.55);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 0 0 1px var(--color-ice),
+    0 12px 36px -10px rgba(189, 224, 248, 0.9),
+    0 0 36px -4px rgba(124, 196, 245, 0.7);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--color-frost);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+.btn-ghost:hover {
+  border-color: var(--color-ice);
+  background: rgba(189, 224, 248, 0.06);
+}
+
+/* Section eyebrow */
+.eyebrow {
+  font-family: var(--font-body);
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--color-ice);
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.25; transform: scale(0.85); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+.twinkle {
+  animation: twinkle 3.5s ease-in-out infinite;
+}
+.twinkle-delay-1 { animation-delay: 0.6s; }
+.twinkle-delay-2 { animation-delay: 1.2s; }
+.twinkle-delay-3 { animation-delay: 1.8s; }
+.twinkle-delay-4 { animation-delay: 2.4s; }
