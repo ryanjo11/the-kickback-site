@@ -76,7 +76,7 @@ const tentpoles: Tentpole[] = [
     title: "Bae Brigade",
     blurb:
       "A Sunday mainstage moment inside The Tabernacle. Details announcing soon.",
-    photo: "/past-events/cyw-kickback-411.jpg",
+    photo: "/BaeBrigade.jpeg",
     tag: "mainstage",
     accent: "hot",
     rotate: "rotate-3",
