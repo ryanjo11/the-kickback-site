@@ -37,9 +37,6 @@ type ScheduleItem = {
 
 const tbaPanel: Speaker[] = [
   { role: "moderator", name: "Speakers to be announced soon", title: "", company: "" },
-  { role: "speaker", name: "Speakers to be announced soon", title: "", company: "" },
-  { role: "speaker", name: "Speakers to be announced soon", title: "", company: "" },
-  { role: "speaker", name: "Speakers to be announced soon", title: "", company: "" },
 ];
 
 type ParallelTrack = {
@@ -446,38 +443,57 @@ function DayStream({
                   </div>
                 )}
                 {item.speakers && item.speakers.length > 0 && (
-                  <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-2">
-                    {item.speakers.map((s, si) => (
-                      <div
-                        key={si}
-                        className={`border p-2.5 ${
-                          s.role === "moderator"
-                            ? "border-ice/50 bg-ice/[0.06]"
-                            : "border-white/10 bg-ink/40"
-                        }`}
-                      >
+                  <div
+                    className={`mt-3 grid gap-2 ${
+                      item.speakers.length === 1
+                        ? "grid-cols-1"
+                        : "grid-cols-1 sm:grid-cols-2"
+                    }`}
+                  >
+                    {item.speakers.map((s, si) => {
+                      const hasRole = !!(s.title || s.company);
+                      return (
                         <div
-                          className={`font-mono text-[9px] uppercase tracking-[0.25em] mb-1 ${
-                            s.role === "moderator" ? "text-ice" : "text-frost/40"
+                          key={si}
+                          className={`border p-2.5 ${
+                            s.role === "moderator"
+                              ? "border-ice/50 bg-ice/[0.06]"
+                              : "border-white/10 bg-ink/40"
                           }`}
                         >
-                          {s.role === "moderator" ? "◉ mod" : "○ speaker"}
+                          {hasRole && (
+                            <div
+                              className={`font-mono text-[9px] uppercase tracking-[0.25em] mb-1 ${
+                                s.role === "moderator"
+                                  ? "text-ice"
+                                  : "text-frost/40"
+                              }`}
+                            >
+                              {s.role === "moderator" ? "◉ mod" : "○ speaker"}
+                            </div>
+                          )}
+                          <div className="font-display text-xs uppercase leading-tight text-frost">
+                            {s.name}
+                          </div>
+                          {s.title && (
+                            <div className="text-[10px] text-frost/60 mt-0.5 leading-tight font-mono">
+                              {s.title}
+                            </div>
+                          )}
+                          {s.company && (
+                            <div
+                              className={`text-[10px] mt-0.5 leading-tight font-mono ${
+                                s.role === "moderator"
+                                  ? "text-ice/70"
+                                  : "text-frost/50"
+                              }`}
+                            >
+                              {s.company}
+                            </div>
+                          )}
                         </div>
-                        <div className="font-display text-xs uppercase leading-tight text-frost">
-                          {s.name}
-                        </div>
-                        <div className="text-[10px] text-frost/60 mt-0.5 leading-tight font-mono">
-                          {s.title}
-                        </div>
-                        <div
-                          className={`text-[10px] mt-0.5 leading-tight font-mono ${
-                            s.role === "moderator" ? "text-ice/70" : "text-frost/50"
-                          }`}
-                        >
-                          {s.company}
-                        </div>
-                      </div>
-                    ))}
+                      );
+                    })}
                   </div>
                 )}
               </div>
@@ -700,44 +716,59 @@ export default function SchedulePage() {
 
                               {/* Speaker cards */}
                               {item.speakers && item.speakers.length > 0 && (
-                                <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-2">
-                                  {item.speakers.map((s, si) => (
-                                    <div
-                                      key={si}
-                                      className={`border p-2.5 ${
-                                        s.role === "moderator"
-                                          ? "border-ice/50 bg-ice/[0.06]"
-                                          : "border-white/10 bg-ink/40"
-                                      }`}
-                                    >
+                                <div
+                                  className={`mt-3 grid gap-2 ${
+                                    item.speakers.length === 1
+                                      ? "grid-cols-1"
+                                      : "grid-cols-1 sm:grid-cols-2"
+                                  }`}
+                                >
+                                  {item.speakers.map((s, si) => {
+                                    const hasRole = !!(s.title || s.company);
+                                    return (
                                       <div
-                                        className={`font-mono text-[9px] uppercase tracking-[0.25em] mb-1 ${
+                                        key={si}
+                                        className={`border p-2.5 ${
                                           s.role === "moderator"
-                                            ? "text-ice"
-                                            : "text-frost/40"
+                                            ? "border-ice/50 bg-ice/[0.06]"
+                                            : "border-white/10 bg-ink/40"
                                         }`}
                                       >
-                                        {s.role === "moderator"
-                                          ? "◉ mod"
-                                          : "○ speaker"}
+                                        {hasRole && (
+                                          <div
+                                            className={`font-mono text-[9px] uppercase tracking-[0.25em] mb-1 ${
+                                              s.role === "moderator"
+                                                ? "text-ice"
+                                                : "text-frost/40"
+                                            }`}
+                                          >
+                                            {s.role === "moderator"
+                                              ? "◉ mod"
+                                              : "○ speaker"}
+                                          </div>
+                                        )}
+                                        <div className="font-display text-xs uppercase leading-tight text-frost">
+                                          {s.name}
+                                        </div>
+                                        {s.title && (
+                                          <div className="text-[10px] text-frost/60 mt-0.5 leading-tight font-mono">
+                                            {s.title}
+                                          </div>
+                                        )}
+                                        {s.company && (
+                                          <div
+                                            className={`text-[10px] mt-0.5 leading-tight font-mono ${
+                                              s.role === "moderator"
+                                                ? "text-ice/70"
+                                                : "text-frost/50"
+                                            }`}
+                                          >
+                                            {s.company}
+                                          </div>
+                                        )}
                                       </div>
-                                      <div className="font-display text-xs uppercase leading-tight text-frost">
-                                        {s.name}
-                                      </div>
-                                      <div className="text-[10px] text-frost/60 mt-0.5 leading-tight font-mono">
-                                        {s.title}
-                                      </div>
-                                      <div
-                                        className={`text-[10px] mt-0.5 leading-tight font-mono ${
-                                          s.role === "moderator"
-                                            ? "text-ice/70"
-                                            : "text-frost/50"
-                                        }`}
-                                      >
-                                        {s.company}
-                                      </div>
-                                    </div>
-                                  ))}
+                                    );
+                                  })}
                                 </div>
                               )}
                             </div>
