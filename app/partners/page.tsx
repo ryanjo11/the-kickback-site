@@ -29,25 +29,24 @@ export default function PartnersPage() {
         <section className="py-24 md:py-28 bg-ink-soft border-y border-white/10">
           <div className="max-w-7xl mx-auto px-6 md:px-10">
             <div className="text-center mb-14">
-              <p className="eyebrow mb-4">Past + Present Partners</p>
-              <h2 className="font-display text-5xl md:text-6xl uppercase leading-[0.95]">
-                Brands that <span className="text-ice">show up</span>.
+              <h2 className="font-display text-5xl md:text-7xl uppercase leading-[0.95]">
+                2026 <span className="text-ice">Partners</span>.
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-white/10 border border-white/10 rounded-2xl overflow-hidden max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-white/10 border border-white/10 rounded-2xl overflow-hidden max-w-6xl mx-auto">
               {pastBrands.map((p) => (
                 <div
                   key={p.name}
-                  className="bg-ink hover:bg-royal-deep/30 transition-colors aspect-[3/2] flex items-center justify-center p-5 text-center"
+                  className="bg-ink hover:bg-royal-deep/30 transition-colors aspect-[4/3] flex items-center justify-center p-8 md:p-10 text-center"
                 >
                   {p.logo ? (
                     <Image
                       src={p.logo}
                       alt={p.name}
-                      width={240}
-                      height={120}
-                      className="max-h-16 md:max-h-20 w-auto object-contain"
+                      width={480}
+                      height={240}
+                      className="max-h-32 md:max-h-40 w-auto object-contain"
                     />
                   ) : (
                     <span className="font-display text-sm md:text-base uppercase tracking-wider text-frost/75">
