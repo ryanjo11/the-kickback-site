@@ -20,12 +20,6 @@ const pastBrands: Brand[] = [
   { name: "Care For The Culture", logo: "/Care fir the Culture.png" },
   { name: "Zynga", logo: "/zynga-logo.png" },
   { name: "Live Nation Urban", logo: "/LNU Logo__Stacked-Wht (1).png" },
-  { name: "XFINITY" },
-  { name: "MICROSOFT" },
-  { name: "ROOTS PICNIC" },
-  { name: "BROCCOLI CITY" },
-  { name: "ONE MUSIC FEST" },
-  { name: "CXMMUNITY MEDIA" },
 ];
 
 export default function PartnersPage() {
@@ -79,7 +73,7 @@ export default function PartnersPage() {
               </h2>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-px bg-white/10 border border-white/10 rounded-2xl overflow-hidden">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-white/10 border border-white/10 rounded-2xl overflow-hidden max-w-5xl mx-auto">
               {pastBrands.map((p) => (
                 <div
                   key={p.name}
