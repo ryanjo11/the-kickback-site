@@ -18,6 +18,7 @@ type Tier = {
   includes: string[];
   accent: "ice" | "hot" | "royal";
   best?: boolean;
+  ticketUrl?: string;
 };
 
 type Day = {
@@ -37,7 +38,7 @@ const days: Day[] = [
     day: "Fri",
     date: "Dec 11, 2026",
     venue: "LVRN Studios",
-    status: "in progress",
+    status: "on sale",
     tiers: [
       {
         code: "T-01",
@@ -51,6 +52,7 @@ const days: Day[] = [
           "Open mixer 9pm – 11pm",
         ],
         accent: "ice",
+        ticketUrl: "https://posh.vip/e/the-kickback-creator-state-of-the-union",
       },
     ],
   },
@@ -60,7 +62,7 @@ const days: Day[] = [
     day: "Sat",
     date: "Dec 12, 2026",
     venue: "SkateATL",
-    status: "free entry",
+    status: "rsvp open",
     tiers: [
       {
         code: "T-02",
@@ -74,6 +76,7 @@ const days: Day[] = [
           "RSVP required for entry",
         ],
         accent: "royal",
+        ticketUrl: "https://posh.vip/e/the-kickback-skate-jam",
       },
     ],
   },
@@ -313,6 +316,21 @@ function DayPanel({ d, wide = false }: { d: Day; wide?: boolean }) {
                   ))}
                 </ul>
               </div>
+
+              {/* Per-tier CTA */}
+              {t.ticketUrl && (
+                <div className="mt-4 pt-3 border-t border-white/10">
+                  <a
+                    href={t.ticketUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center w-full md:w-auto px-6 py-3 font-mono text-[11px] uppercase tracking-[0.3em] font-bold text-ink transition-opacity hover:opacity-90"
+                    style={{ background: a.hex }}
+                  >
+                    {t.price === "FREE" ? "RSVP Now" : "Buy Tickets"} →
+                  </a>
+                </div>
+              )}
             </div>
           );
         })}
@@ -328,10 +346,17 @@ function DayPanel({ d, wide = false }: { d: Day; wide?: boolean }) {
             <span className="text-ice">[A]</span> select
           </span>
         </div>
-        <div className="text-[#FF3E88] flex items-center gap-2">
-          <span className="w-1.5 h-1.5 bg-[#FF3E88] animate-pulse" />
-          ON SALE SOON
-        </div>
+        {d.tiers.some((t) => t.ticketUrl) ? (
+          <div className="text-ice flex items-center gap-2">
+            <span className="w-1.5 h-1.5 bg-ice animate-pulse" />
+            {d.status.toUpperCase()}
+          </div>
+        ) : (
+          <div className="text-[#FF3E88] flex items-center gap-2">
+            <span className="w-1.5 h-1.5 bg-[#FF3E88] animate-pulse" />
+            ON SALE SOON
+          </div>
+        )}
       </div>
     </div>
   );
@@ -349,6 +374,7 @@ type MatrixTier = {
   accent: "ice" | "hot" | "royal";
   best?: boolean;
   features: Record<string, boolean>;
+  ticketUrl?: string;
 };
 
 const matrixTiers: MatrixTier[] = [
@@ -356,11 +382,13 @@ const matrixTiers: MatrixTier[] = [
     code: "T-01", day: "FRI", dayDate: "12.11", name: "Opening Night", price: "$10",
     window: "6p–11p", accent: "ice",
     features: { lvrn: true },
+    ticketUrl: "https://posh.vip/e/the-kickback-creator-state-of-the-union",
   },
   {
     code: "T-02", day: "SAT", dayDate: "12.12", name: "Skate Park", price: "FREE",
     window: "6p–11p", accent: "royal",
     features: { skate: true },
+    ticketUrl: "https://posh.vip/e/the-kickback-skate-jam",
   },
   {
     code: "T-03", day: "SUN", dayDate: "12.13", name: "Daytime", price: "$10",
@@ -469,9 +497,19 @@ function TicketMatrixMobile() {
               </ul>
             </div>
 
-            {/* Status */}
+            {/* Status / CTA */}
             <div className="pt-3 mt-3 border-t border-white/10">
-              {t.price === "FREE" ? (
+              {t.ticketUrl ? (
+                <a
+                  href={t.ticketUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center w-full px-4 py-3 font-mono text-[11px] uppercase tracking-[0.3em] font-bold text-ink"
+                  style={{ background: color }}
+                >
+                  {t.price === "FREE" ? "RSVP Now" : "Buy Tickets"} →
+                </a>
+              ) : t.price === "FREE" ? (
                 <span className="font-mono text-[9px] uppercase tracking-widest text-ice">
                   ● RSVP SOON
                 </span>
@@ -591,24 +629,37 @@ function TicketMatrix() {
                 status
               </div>
             </td>
-            {matrixTiers.map((t) => (
-              <td
-                key={t.code}
-                className={`p-3 border-r border-white/10 text-center ${
-                  t.best ? "bg-ice/[0.07]" : ""
-                }`}
-              >
-                {t.price === "FREE" ? (
-                  <span className="font-mono text-[9px] uppercase tracking-widest text-ice">
-                    ● RSVP SOON
-                  </span>
-                ) : (
-                  <span className="font-mono text-[9px] uppercase tracking-widest text-[#FF3E88]">
-                    ● ON SALE SOON
-                  </span>
-                )}
-              </td>
-            ))}
+            {matrixTiers.map((t) => {
+              const color = tierColor(t);
+              return (
+                <td
+                  key={t.code}
+                  className={`p-3 border-r border-white/10 text-center ${
+                    t.best ? "bg-ice/[0.07]" : ""
+                  }`}
+                >
+                  {t.ticketUrl ? (
+                    <a
+                      href={t.ticketUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center px-3 py-2 font-mono text-[9px] uppercase tracking-[0.25em] font-bold text-ink whitespace-nowrap"
+                      style={{ background: color }}
+                    >
+                      {t.price === "FREE" ? "RSVP" : "Buy"} →
+                    </a>
+                  ) : t.price === "FREE" ? (
+                    <span className="font-mono text-[9px] uppercase tracking-widest text-ice">
+                      ● RSVP SOON
+                    </span>
+                  ) : (
+                    <span className="font-mono text-[9px] uppercase tracking-widest text-[#FF3E88]">
+                      ● ON SALE SOON
+                    </span>
+                  )}
+                </td>
+              );
+            })}
           </tr>
         </tbody>
       </table>
@@ -633,19 +684,19 @@ export default function TicketsPage() {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-ink/60 via-ink/40 to-ink" />
           <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-10 w-full">
-            <div className="flex items-center gap-3 mb-4 font-mono text-[10px] uppercase tracking-[0.3em]">
+            <div className="flex items-center gap-3 mb-4 font-mono text-[10px] uppercase tracking-[0.3em] flex-wrap">
               <span className="text-ice">● REC</span>
               <span className="text-frost/50">/</span>
               <span className="text-frost/70">atlanta · dec 11–13</span>
               <span className="text-frost/50">/</span>
-              <span className="text-[#FF3E88]">on sale soon</span>
+              <span className="text-ice">● on sale · fri + sat</span>
             </div>
             <h1 className="font-display text-6xl md:text-8xl uppercase leading-[0.9]">
               The <span className="text-ice">tickets.</span>
             </h1>
             <p className="mt-6 max-w-xl text-frost/70 leading-relaxed">
-              Three nights. Seven ways to pull up. Pricing is in progress —
-              subscribe for the presale drop.
+              Three nights. Seven ways to pull up. Friday + Saturday are live
+              now — Sunday drops soon.
             </p>
           </div>
         </section>

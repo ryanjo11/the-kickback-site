@@ -2,7 +2,7 @@ export default function Marquee() {
   const items = [
     "Atlanta 12.11–12.13",
     "LVRN Studios · SkateATL · The Tabernacle",
-    "Tickets Soon",
+    "Tickets On Sale · Fri + Sat",
     "The Kickback Tour",
     "2027 Dates Dropping",
   ];

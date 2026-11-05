@@ -46,8 +46,8 @@ export default function Hero() {
           <span className="font-display text-xl md:text-2xl tracking-wide">
             Atlanta · 12.11–12.13
           </span>
-          <span className="font-mono text-[10px] text-[#FF3E88] uppercase tracking-[0.25em]">
-            tickets soon
+          <span className="font-mono text-[10px] text-[#BDE0F8] uppercase tracking-[0.25em]">
+            ● on sale now
           </span>
         </div>
 

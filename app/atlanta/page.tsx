@@ -39,7 +39,7 @@ export default function AtlantaPage() {
               <span className="text-frost/50">/</span>
               <span className="text-frost/70">atlanta flagship · three nights</span>
               <span className="text-frost/50">/</span>
-              <span className="text-[#FF3E88]">coming soon</span>
+              <span className="text-[#BDE0F8]">● on sale · fri + sat</span>
             </div>
             <h1 className="font-display text-7xl md:text-[10rem] uppercase leading-[0.85]">
               Atlanta
