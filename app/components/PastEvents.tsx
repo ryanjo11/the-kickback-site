@@ -40,7 +40,7 @@ const collageShots: Shot[] = [
     accent: "hot",
   },
   {
-    src: "/past-events/cyw-kickback-578.jpg",
+    src: "/past-events/gherbo.jpg",
     caption: "Sold out",
     location: "ATL",
     tag: "cap 1200",

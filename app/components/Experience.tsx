@@ -42,7 +42,7 @@ const tentpoles: Tentpole[] = [
     title: "Concert Experience",
     blurb:
       "A-list touring artists and emerging talent on one stage. Past performers: Pusha T, JID, Baby Tate, G Herbo, NLE Choppa, Kenny Mason.",
-    photo: "/past-events/cyw-kickback-411.jpg",
+    photo: "/past-events/gherbo.jpg",
     accent: "hot",
     rotate: "rotate-3",
   },
