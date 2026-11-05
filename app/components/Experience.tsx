@@ -66,7 +66,7 @@ const tentpoles: Tentpole[] = [
   },
   {
     num: "07",
-    title: "Cosplay",
+    title: "Cosplay Competition",
     blurb:
       "Cosplay meetups across the weekend and a mainstage cosplay competition at The Tabernacle. Judges, prizes, full-crowd energy.",
     photo: "/CosplayCompetition.JPG",
