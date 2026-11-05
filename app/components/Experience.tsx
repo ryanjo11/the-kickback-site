@@ -5,7 +5,6 @@ type Tentpole = {
   title: string;
   blurb: string;
   photo: string;
-  tag: string;
   accent: "acid" | "hot";
   rotate: string;
 };
@@ -16,8 +15,7 @@ const tentpoles: Tentpole[] = [
     title: "Conversations & Fireside Chats",
     blurb:
       "Culture-driven panels on streaming, anime, fashion, and sports. The rooms where the next wave of creators learn to navigate the industry.",
-    photo: "/past-events/7.jpg",
-    tag: "panels",
+    photo: "/PanelsFireside.JPG",
     accent: "acid",
     rotate: "-rotate-3",
   },
@@ -26,8 +24,7 @@ const tentpoles: Tentpole[] = [
     title: "Creator Lounges & Mixers",
     blurb:
       "Intimate rooms and after-hours mixers where creators connect with the executives, brands, and peers shaping what's next.",
-    photo: "/past-events/end5.jpg",
-    tag: "networking",
+    photo: "/creator lounge mixer .JPG",
     accent: "hot",
     rotate: "rotate-2",
   },
@@ -37,7 +34,6 @@ const tentpoles: Tentpole[] = [
     blurb:
       "Open play stations and a ProAm tournament where creators, athletes, and the community compete side by side.",
     photo: "/past-events/cyw-kickback-293.jpg",
-    tag: "tournament",
     accent: "acid",
     rotate: "-rotate-2",
   },
@@ -47,7 +43,6 @@ const tentpoles: Tentpole[] = [
     blurb:
       "A-list touring artists and emerging talent on one stage. Past performers: Pusha T, JID, Baby Tate, G Herbo, NLE Choppa, Kenny Mason.",
     photo: "/past-events/cyw-kickback-411.jpg",
-    tag: "concert",
     accent: "hot",
     rotate: "rotate-3",
   },
@@ -57,7 +52,6 @@ const tentpoles: Tentpole[] = [
     blurb:
       "Open skate jam + $1,000 best trick competition. Open-air session with DJ sets all night. Culture outside.",
     photo: "/SkateATL.avif",
-    tag: "skate",
     accent: "acid",
     rotate: "rotate-2",
   },
@@ -67,27 +61,33 @@ const tentpoles: Tentpole[] = [
     blurb:
       "DJ sets running across all three nights — opening the weekend, closing the concert hall, powering the vibes in between.",
     photo: "/past-events/end5.jpg",
-    tag: "dj sets",
     accent: "hot",
     rotate: "-rotate-2",
   },
   {
     num: "07",
+    title: "Cosplay",
+    blurb:
+      "Cosplay meetups across the weekend and a mainstage cosplay competition at The Tabernacle. Judges, prizes, full-crowd energy.",
+    photo: "/CosplayCompetition.JPG",
+    accent: "acid",
+    rotate: "-rotate-2",
+  },
+  {
+    num: "08",
     title: "Bae Brigade",
     blurb:
       "A Sunday mainstage moment inside The Tabernacle. Details announcing soon.",
     photo: "/BaeBrigade.jpeg",
-    tag: "mainstage",
     accent: "hot",
     rotate: "rotate-3",
   },
   {
-    num: "08",
+    num: "09",
     title: "Streetwear & Vendor Market",
     blurb:
       "All-day streetwear + sneaker vendor marketplace on the Tabernacle floor. Rising brands, curated by SolePlay ATL.",
-    photo: "/past-events/cyw-kickback-578.jpg",
-    tag: "market",
+    photo: "/VendorMarketplace .JPG",
     accent: "acid",
     rotate: "-rotate-3",
   },
@@ -98,12 +98,10 @@ function accentClasses(a: "acid" | "hot") {
     return {
       text: "text-[#BDE0F8]",
       border: "border-[#BDE0F8]/40",
-      bg: "bg-[#BDE0F8]/10",
     };
   return {
     text: "text-[#FF3E88]",
     border: "border-[#FF3E88]/40",
-    bg: "bg-[#FF3E88]/10",
   };
 }
 
@@ -114,10 +112,10 @@ export default function Experience() {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
           <div className="max-w-2xl">
             <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-[#BDE0F8] mb-3">
-              ● pillars / 8
+              ● pillars / 09
             </div>
             <h2 className="font-display text-5xl md:text-6xl leading-[0.95] uppercase">
-              Event <span className="text-[#BDE0F8]">Programming</span>
+              Weekend <span className="text-[#BDE0F8]">Programming</span>
             </h2>
           </div>
           <p className="text-frost/70 max-w-md text-base md:text-lg">
@@ -127,7 +125,7 @@ export default function Experience() {
         </div>
 
         {/* Polaroid collage */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 pt-4 pb-8 md:px-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 pt-4 pb-8 md:px-4">
           {tentpoles.map((t) => {
             const a = accentClasses(t.accent);
             return (
@@ -144,17 +142,12 @@ export default function Experience() {
                       alt={t.title}
                       fill
                       className="object-cover"
-                      sizes="(min-width: 768px) 25vw, 50vw"
+                      sizes="(min-width: 768px) 33vw, 50vw"
                     />
-                    <div
-                      className={`absolute top-2 left-2 font-mono text-[9px] uppercase tracking-[0.2em] px-1.5 py-0.5 rounded ${a.bg} ${a.text} border ${a.border}`}
-                    >
-                      ● {t.tag}
-                    </div>
                   </div>
                   <div className="mt-3 px-1">
                     <div className="font-mono text-[9px] text-ink/50 uppercase tracking-[0.25em]">
-                      {t.num} / 08
+                      {t.num} / 09
                     </div>
                     <div className="font-display text-base md:text-lg uppercase leading-tight text-ink mt-0.5">
                       {t.title}
