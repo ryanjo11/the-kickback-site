@@ -137,10 +137,10 @@ export default function AtlantaPage() {
                 </div>
               </div>
               <div className="rounded-2xl border border-white/10 bg-ink-soft p-5">
-                <div className="eyebrow mb-2">Entry</div>
-                <div className="font-display text-xl uppercase">$10</div>
+                <div className="eyebrow mb-2">Capacity</div>
+                <div className="font-display text-xl uppercase">250</div>
                 <div className="text-sm text-frost/65 mt-1">
-                  Ticketed
+                  Intimate studio session
                 </div>
               </div>
             </div>
