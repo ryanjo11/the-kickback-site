@@ -191,17 +191,19 @@ export default function AtlantaPage() {
                 </div>
               </div>
               <div className="rounded-2xl border border-white/10 bg-ink-soft p-5">
+                <div className="eyebrow mb-2">Format</div>
+                <div className="font-display text-xl uppercase">
+                  Open Skate Session + Best Trick Competition
+                </div>
+                <div className="text-sm text-frost/65 mt-1">
+                  DJ sets all night · Free · RSVP
+                </div>
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-ink-soft p-5">
                 <div className="eyebrow mb-2">Capacity</div>
                 <div className="font-display text-xl uppercase">250</div>
                 <div className="text-sm text-frost/65 mt-1">
                   Intimate open-air session
-                </div>
-              </div>
-              <div className="rounded-2xl border border-white/10 bg-ink-soft p-5">
-                <div className="eyebrow mb-2">Entry</div>
-                <div className="font-display text-xl uppercase">Free · RSVP</div>
-                <div className="text-sm text-frost/65 mt-1">
-                  First come, first in
                 </div>
               </div>
             </div>
@@ -259,19 +261,19 @@ export default function AtlantaPage() {
                 </div>
               </div>
               <div className="rounded-2xl border border-white/10 bg-ink-soft p-5">
+                <div className="eyebrow mb-2">Format</div>
+                <div className="font-display text-xl uppercase">
+                  Gaming, Creator, and Concert Experience
+                </div>
+                <div className="text-sm text-frost/65 mt-1">
+                  Doors 11am · concert 7pm – 11:30pm
+                </div>
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-ink-soft p-5">
                 <div className="eyebrow mb-2">Capacity</div>
                 <div className="font-display text-xl uppercase">2,200</div>
                 <div className="text-sm text-frost/65 mt-1">
                   Floor + multi-tier balcony
-                </div>
-              </div>
-              <div className="rounded-2xl border border-white/10 bg-ink-soft p-5">
-                <div className="eyebrow mb-2">Neighborhood</div>
-                <div className="font-display text-xl uppercase">
-                  Downtown Atlanta
-                </div>
-                <div className="text-sm text-frost/65 mt-1">
-                  Steps from Centennial Park
                 </div>
               </div>
             </div>
