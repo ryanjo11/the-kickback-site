@@ -32,6 +32,16 @@ const cards: Card[] = [
     accent: "ice",
   },
   {
+    eyebrow: "Creator All-Star Game · Sun 12/13",
+    title: "Compete in 2K, Tekken, or SF",
+    blurb:
+      "Pick your game, pick your console, go to war on the main stage. Rosters finalized Dec 2 — email from the team by Dec 4.",
+    photo: "/past-events/cyw-kickback-293.jpg",
+    cta: "Register to Play →",
+    href: "https://form.typeform.com/to/bsQvy8Yj",
+    accent: "hot",
+  },
+  {
     eyebrow: "Skate · Best Trick Comp",
     title: "Compete for the $1K bag",
     blurb:
@@ -71,16 +81,16 @@ export default function GetInvolvedPage() {
               Get <span className="text-ice">involved.</span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg md:text-xl text-frost/80 leading-relaxed">
-              Three ways to pull up to The Kickback Atlanta. Creators,
+              Four ways to pull up to The Kickback Atlanta. Creators, gamers,
               skaters, vendors — the rooms are being built right now.
             </p>
           </div>
         </section>
 
-        {/* 3 cards */}
+        {/* 4 cards */}
         <section className="py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-6 md:px-10">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
               {cards.map((c) => {
                 const hex = c.accent === "hot" ? "#FF3E88" : "#BDE0F8";
                 const isExternal = c.href.startsWith("http");

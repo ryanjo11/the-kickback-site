@@ -33,6 +33,8 @@ type ScheduleItem = {
   kind: Kind;
   viewers?: string;
   speakers?: Speaker[];
+  registerUrl?: string;
+  registerLabel?: string;
 };
 
 const tbaPanel: Speaker[] = [
@@ -242,9 +244,11 @@ const days: Day[] = [
         time: "1:30 – 2:30 PM",
         timeMono: "1:30 PM",
         title: "Creator All-Star Game",
-        note: "Your favorite creators pick sides and go to war on the main stage. Trash talk on, gloves off — no scripts, just gameplay.",
+        note: "Your favorite creators pick sides and go to war on the main stage. Trash talk on, gloves off — no scripts, just gameplay. Compete in Tekken, Street Fighter, or NBA 2K.",
         kind: "creator",
         viewers: "12k",
+        registerUrl: "https://form.typeform.com/to/bsQvy8Yj",
+        registerLabel: "Register to Play →",
       },
       {
         time: "2:30 – 3:15 PM",
@@ -784,6 +788,21 @@ export default function SchedulePage() {
                                       </div>
                                     );
                                   })}
+                                </div>
+                              )}
+
+                              {/* Register CTA (per-item) */}
+                              {item.registerUrl && (
+                                <div className="mt-3">
+                                  <a
+                                    href={item.registerUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center justify-center px-4 py-2 font-mono text-[10px] uppercase tracking-[0.3em] font-bold text-ink"
+                                    style={{ background: "#FF3E88" }}
+                                  >
+                                    {item.registerLabel || "Register →"}
+                                  </a>
                                 </div>
                               )}
                             </div>
