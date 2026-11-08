@@ -51,11 +51,11 @@ export default function PartnersPage() {
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-white/10 border border-white/10 rounded-2xl overflow-hidden max-w-6xl mx-auto">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-px bg-white/10 border border-white/10 rounded-2xl overflow-hidden max-w-6xl mx-auto">
               {pastBrands.map((p) => (
                 <div
                   key={p.name}
-                  className="bg-ink hover:bg-royal-deep/30 transition-colors aspect-[4/3] flex items-center justify-center p-8 md:p-10 text-center"
+                  className="bg-ink hover:bg-royal-deep/30 transition-colors aspect-square flex items-center justify-center p-6 md:p-8 text-center"
                 >
                   {p.logo ? (
                     <Image
@@ -63,7 +63,7 @@ export default function PartnersPage() {
                       alt={p.name}
                       width={480}
                       height={240}
-                      className="max-h-32 md:max-h-40 w-auto object-contain"
+                      className="max-h-24 md:max-h-28 w-auto object-contain"
                     />
                   ) : (
                     <span className="font-display text-sm md:text-base uppercase tracking-wider text-frost/75">
