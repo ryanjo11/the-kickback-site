@@ -2,6 +2,7 @@ import Image from "next/image";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import Community from "../components/Community";
+import HeroVideo from "../components/HeroVideo";
 
 export const metadata = {
   title: "Partner With The Kickback · Cxmmunity Media",
@@ -18,13 +19,29 @@ const pastBrands: Brand[] = [
   { name: "Care For The Culture", logo: "/Care fir the Culture.png" },
   { name: "Zynga", logo: "/zynga-logo.png" },
   { name: "Live Nation Urban", logo: "/LNU Logo__Stacked-Wht (1).png" },
+  { name: "Skillshot", logo: "/skillshot.png" },
 ];
 
 export default function PartnersPage() {
   return (
     <>
       <Nav />
-      <main className="bg-ink text-frost pt-20">
+      <main className="bg-ink text-frost">
+        {/* Hero — video backdrop */}
+        <section className="relative min-h-[55vh] md:min-h-[70vh] flex items-center overflow-hidden pt-32 pb-16 md:pt-40 md:pb-24">
+          <HeroVideo />
+          <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 w-full">
+            <p className="eyebrow mb-4">Partner With The Kickback</p>
+            <h1 className="font-display text-6xl md:text-8xl uppercase leading-[0.9]">
+              Partners.
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg md:text-xl text-frost/80 leading-relaxed">
+              Gaming, music, and creator culture — in rooms where your brand
+              gets lived in, not scrolled past.
+            </p>
+          </div>
+        </section>
+
         {/* Brands that show up */}
         <section className="py-24 md:py-28 bg-ink-soft border-y border-white/10">
           <div className="max-w-7xl mx-auto px-6 md:px-10">

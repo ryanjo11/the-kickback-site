@@ -91,7 +91,7 @@ const days: Day[] = [
       {
         code: "T-03",
         name: "Daytime Only",
-        price: "$10",
+        price: "$15",
         window: "11:00 AM – 6:00 PM",
         includes: [
           "All daytime programming",
@@ -391,7 +391,7 @@ const matrixTiers: MatrixTier[] = [
     ticketUrl: "https://posh.vip/e/the-kickback-skate-jam",
   },
   {
-    code: "T-03", day: "SUN", dayDate: "12.13", name: "Daytime", price: "$10",
+    code: "T-03", day: "SUN", dayDate: "12.13", name: "Daytime", price: "$15",
     window: "11a–6p", accent: "ice",
     features: { daytime: true, gamingLounge: true, headshots: true, vendors: true },
   },
@@ -722,15 +722,15 @@ export default function TicketsPage() {
               <ul className="font-mono text-xs text-frost/70 space-y-1 leading-relaxed">
                 <li>
                   <span className="text-ice">▸</span> Daytime + Concert GA
-                  bought separately: <span className="text-frost/50">$40</span>{" "}
+                  bought separately: <span className="text-frost/50">$45</span>{" "}
                   → Full Experience is{" "}
-                  <span className="text-ice">$37 · save $3</span>
+                  <span className="text-ice">$37 · save $8</span>
                 </li>
                 <li>
                   <span className="text-ice">▸</span> Daytime + Concert VIP
-                  bought separately: <span className="text-frost/50">$50</span>{" "}
+                  bought separately: <span className="text-frost/50">$55</span>{" "}
                   → Full & Concert VIP is{" "}
-                  <span className="text-ice">$45 · save $5</span>
+                  <span className="text-ice">$45 · save $10</span>
                 </li>
               </ul>
             </div>

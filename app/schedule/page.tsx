@@ -54,6 +54,7 @@ type Day = {
   date: string;
   venue: string;
   allDay?: string[];
+  talent?: string;
   items: ScheduleItem[];
   parallel?: ParallelTrack;
 };
@@ -65,6 +66,7 @@ const days: Day[] = [
     day: "Fri",
     date: "Dec 11, 2026",
     venue: "LVRN Studios",
+    talent: "HOSTS · Bxn Trizzy + Drizzy  //  OFFICIAL DJ · DJ Kelli",
     items: [
       { time: "6:00 PM", timeMono: "6:00 PM", title: "Creator State of the Union", kind: "logistics" },
       {
@@ -78,16 +80,23 @@ const days: Day[] = [
       {
         time: "7:00 – 7:30 PM",
         timeMono: "7:00 PM",
-        title: "Where Worlds Collide",
-        note: "Speakers to be announced soon.",
+        title: "Panel · Where Worlds Collide",
+        note: "Confirmed speaker — more announcing soon.",
         kind: "panel",
         viewers: "1.2k",
-        speakers: tbaPanel,
+        speakers: [
+          {
+            role: "speaker",
+            name: "Brandon Butler",
+            title: "Founder & CEO",
+            company: "ButlerATL & 404 Day",
+          },
+        ],
       },
       {
         time: "7:30 – 8:00 PM",
         timeMono: "7:30 PM",
-        title: "The Creator Economy Is the Culture",
+        title: "Panel · The Creator Economy Is the Culture",
         note: "Speakers to be announced soon.",
         kind: "panel",
         viewers: "1.8k",
@@ -102,7 +111,7 @@ const days: Day[] = [
       {
         time: "8:30 – 9:00 PM",
         timeMono: "8:30 PM",
-        title: "Made in Atlanta",
+        title: "Panel · Made in Atlanta",
         note: "Speakers to be announced soon.",
         kind: "panel",
         viewers: "2.4k",
@@ -164,6 +173,7 @@ const days: Day[] = [
     day: "Sun",
     date: "Dec 13, 2026",
     venue: "The Tabernacle · Downtown Atlanta",
+    talent: "HOSTS · StoryMode Bae  //  DJ SETS BY · DJ Flowers + Cleotrvppv",
     allDay: [
       "Open Gaming Lounge + Tournaments",
       "Cosplay Meetups",
@@ -181,9 +191,17 @@ const days: Day[] = [
           time: "12:30 – 1:30 PM",
           timeMono: "12:30 PM",
           title: "Executive Workshop 1: Scaling Your Business as a Creator & Creative Entrepreneur",
-          note: "Host and panelists announcing soon.",
+          note: "Confirmed speaker — additional panelists announcing soon.",
           kind: "panel",
           viewers: "invite",
+          speakers: [
+            {
+              role: "speaker",
+              name: "Ryan Johnson",
+              title: "Founder & CEO",
+              company: "Cxmmunity",
+            },
+          ],
         },
         {
           time: "2:30 – 3:30 PM",
@@ -222,8 +240,8 @@ const days: Day[] = [
       {
         time: "2:30 – 3:15 PM",
         timeMono: "2:30 PM",
-        title: "No Spoilers Podcast Presents: Anime Debates",
-        note: "Hosted by Troop & Slim Jxmmi. Creators, cosplayers, and comics face off on stage — no script, all bars, all chaos.",
+        title: "Anime Debate · Hosted by Trap Sushi + Slim Jxmmi",
+        note: "Trap Sushi + Slim Jxmmi on the mic — with Troop in the mix. Creators, cosplayers, and comics face off on stage. No script, all bars, all chaos.",
         kind: "creator",
         viewers: "8.5k",
       },
@@ -235,14 +253,6 @@ const days: Day[] = [
         kind: "panel",
         viewers: "6.1k",
         speakers: tbaPanel,
-      },
-      {
-        time: "3:45 – 4:00 PM",
-        timeMono: "3:45 PM",
-        title: "Spelman Women",
-        note: "A live spotlight on the Spelman women driving the next wave of HBCU creator culture, game dev, and community.",
-        kind: "creator",
-        viewers: "3.2k",
       },
       {
         time: "4:30 – 5:00 PM",
@@ -278,7 +288,7 @@ const days: Day[] = [
         time: "7:00 – 11:30 PM",
         timeMono: "7:00 PM",
         title: "DJ Sets + Artist Performances",
-        note: "The finale. Rotating DJ sets, headline artist performance, and emerging talent. Four and a half hours of full-volume energy to close out The Kickback. Headline artist announcing soon.",
+        note: "The finale. DJ sets from DJ Flowers + Cleotrvppv, headline artist performance, and emerging talent. Four and a half hours of full-volume energy to close out The Kickback. Headline artist announcing soon.",
         kind: "concert",
         viewers: "45k",
       },
@@ -340,6 +350,13 @@ function DayStream({
       <div className="px-4 py-2 border-b border-white/10 font-mono text-[10px] uppercase tracking-widest text-frost/60">
         <span className="text-ice">▸ channel</span> · {d.venue}
       </div>
+
+      {/* Talent strip (hosts / official DJ) */}
+      {d.talent && (
+        <div className="px-4 py-2 border-b border-white/10 font-mono text-[10px] uppercase tracking-widest text-ice/80 bg-ice/[0.04]">
+          ◉ {d.talent}
+        </div>
+      )}
 
       {/* NOW STREAMING featured block */}
       <div className="p-4 md:p-5 border-b-2 border-white/10 bg-gradient-to-r from-[#FF3E88]/15 via-[#FF3E88]/5 to-transparent">
@@ -649,6 +666,13 @@ export default function SchedulePage() {
                     <div className="md:hidden px-5 py-2 border-b border-white/10 font-mono text-[10px] uppercase tracking-widest text-frost/60">
                       ▸ {d.venue}
                     </div>
+
+                    {/* Talent strip (hosts / official DJ) */}
+                    {d.talent && (
+                      <div className="px-5 py-3 border-b border-white/10 font-mono text-[10px] md:text-[11px] uppercase tracking-widest text-ice/85 bg-ice/[0.04]">
+                        ◉ {d.talent}
+                      </div>
+                    )}
 
                     {/* All-day chips (Sunday) */}
                     {d.allDay && d.allDay.length > 0 && (
