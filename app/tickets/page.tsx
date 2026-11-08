@@ -675,8 +675,8 @@ export default function TicketsPage() {
         {/* Page intro — photo-led */}
         <section className="relative pt-32 pb-16 md:pt-52 md:pb-28 overflow-hidden grain min-h-[55vh] md:min-h-[65vh] flex items-center">
           <Image
-            src="/past-events/cyw-kickback-411.jpg"
-            alt="Past Kickback crowd"
+            src="/past-events/gherbo.jpg"
+            alt="G Herbo performing at a past Kickback"
             fill
             priority
             className="object-cover"
