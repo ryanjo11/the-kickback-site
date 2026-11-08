@@ -75,6 +75,12 @@ export default function AtlantaPage() {
                 See Tickets →
               </Link>
               <Link
+                href="/get-involved"
+                className="btn-ghost inline-flex items-center justify-center px-8 py-4 rounded-full text-base font-semibold uppercase tracking-wide"
+              >
+                Apply to Pull Up →
+              </Link>
+              <Link
                 href="#waitlist"
                 className="btn-ghost inline-flex items-center justify-center px-8 py-4 rounded-full text-base font-semibold uppercase tracking-wide"
               >

@@ -1,0 +1,161 @@
+import Image from "next/image";
+import Link from "next/link";
+import Nav from "../components/Nav";
+import Footer from "../components/Footer";
+import HeroVideo from "../components/HeroVideo";
+
+export const metadata = {
+  title: "Get Involved · The Kickback Atlanta · Dec 11–13",
+  description:
+    "Apply to pull up to The Kickback Atlanta. Creators, special guests, panelists, skaters for the Best Trick Comp, and vendors — three ways in. Applications close Dec 2, 2026.",
+};
+
+type Card = {
+  eyebrow: string;
+  title: string;
+  blurb: string;
+  photo: string;
+  cta: string;
+  href: string;
+  accent: "ice" | "hot";
+};
+
+const cards: Card[] = [
+  {
+    eyebrow: "Creator · Special Guest · Panelist",
+    title: "Pull up to the main stage",
+    blurb:
+      "Comped entry in exchange for a social post + collab with @cxmmunitymedia. Reviewed in batches — applications close Dec 2.",
+    photo: "/past-events/cyw-kickback-411.jpg",
+    cta: "Apply as a Creator →",
+    href: "#", // TODO: Form 1 Typeform URL
+    accent: "ice",
+  },
+  {
+    eyebrow: "Skate · Best Trick Comp",
+    title: "Compete for the $1K bag",
+    blurb:
+      "Open to all ages and all skill levels. Sat Dec 12 at SkateATL. Register to lock your spot — waivers signed on-site.",
+    photo: "/past-events/cyw-kickback-293.jpg",
+    cta: "Register to Compete →",
+    href: "#", // TODO: Form 2 Typeform URL
+    accent: "hot",
+  },
+  {
+    eyebrow: "Vendor Village",
+    title: "Set up. Sell out.",
+    blurb:
+      "Free table space on Sun Dec 13 at The Tabernacle · 11am–11pm. Streetwear, sneakers, art, jewelry, zines — pull up.",
+    photo: "/past-events/end5.jpg",
+    cta: "Apply as a Vendor →",
+    href: "#", // TODO: Form 3 Typeform URL
+    accent: "ice",
+  },
+];
+
+export default function GetInvolvedPage() {
+  return (
+    <>
+      <Nav />
+      <main className="bg-ink text-frost">
+        {/* Hero */}
+        <section className="relative min-h-[50vh] md:min-h-[60vh] flex items-center overflow-hidden pt-32 pb-16 md:pt-40 md:pb-20">
+          <HeroVideo />
+          <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 w-full">
+            <div className="flex items-center gap-3 mb-4 font-mono text-[10px] uppercase tracking-[0.3em]">
+              <span className="text-ice">● rolling applications</span>
+              <span className="text-frost/50">/</span>
+              <span className="text-frost/70">close dec 2 · 2026</span>
+            </div>
+            <h1 className="font-display text-6xl md:text-8xl uppercase leading-[0.9]">
+              Get <span className="text-ice">involved.</span>
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg md:text-xl text-frost/80 leading-relaxed">
+              Three ways to pull up to The Kickback Atlanta. Creators,
+              skaters, vendors — the rooms are being built right now.
+            </p>
+          </div>
+        </section>
+
+        {/* 3 cards */}
+        <section className="py-16 md:py-24">
+          <div className="max-w-7xl mx-auto px-6 md:px-10">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
+              {cards.map((c) => {
+                const hex = c.accent === "hot" ? "#FF3E88" : "#BDE0F8";
+                const isExternal = c.href.startsWith("http");
+                return (
+                  <Link
+                    key={c.title}
+                    href={c.href}
+                    target={isExternal ? "_blank" : undefined}
+                    rel={isExternal ? "noopener noreferrer" : undefined}
+                    className="group relative border-2 border-white/10 hover:border-white/40 bg-ink overflow-hidden flex flex-col transition-colors"
+                  >
+                    {/* Photo */}
+                    <div className="relative aspect-[4/3] overflow-hidden">
+                      <Image
+                        src={c.photo}
+                        alt={c.title}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        sizes="(min-width: 768px) 33vw, 100vw"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent" />
+                      <div
+                        className="absolute top-3 left-3 font-mono text-[9px] uppercase tracking-[0.3em] px-2 py-1 border bg-ink/80 backdrop-blur-sm"
+                        style={{ color: hex, borderColor: `${hex}80` }}
+                      >
+                        ● {c.eyebrow}
+                      </div>
+                    </div>
+
+                    {/* Body */}
+                    <div className="p-5 md:p-6 flex-1 flex flex-col justify-between gap-4">
+                      <div>
+                        <h3
+                          className="font-display text-2xl md:text-3xl uppercase leading-[0.95]"
+                          style={{ color: hex }}
+                        >
+                          {c.title}
+                        </h3>
+                        <p className="mt-3 text-sm md:text-base text-frost/75 leading-relaxed">
+                          {c.blurb}
+                        </p>
+                      </div>
+                      <div
+                        className="inline-flex items-center justify-center px-5 py-3 font-mono text-[11px] uppercase tracking-[0.3em] font-bold text-ink self-start"
+                        style={{ background: hex }}
+                      >
+                        {c.cta}
+                      </div>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+
+            {/* Footer note */}
+            <div className="mt-12 border border-ice/30 bg-ice/[0.03] p-5 max-w-3xl mx-auto text-center">
+              <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-ice mb-2">
+                ● questions?
+              </div>
+              <p className="font-mono text-xs text-frost/70 leading-relaxed">
+                Reach the team at{" "}
+                <a
+                  href="mailto:partner@cxmmunitymedia.co"
+                  className="text-ice underline"
+                >
+                  partner@cxmmunitymedia.co
+                </a>
+                . All applications reviewed in batches — don&rsquo;t worry if
+                you don&rsquo;t hear back right away.
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </>
+  );
+}

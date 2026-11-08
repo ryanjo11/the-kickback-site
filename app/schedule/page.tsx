@@ -614,6 +614,14 @@ export default function SchedulePage() {
               Three nights. Opening at the skate park. Closing at the Tabernacle. Panel
               titles, speakers, and the headline artist announcing soon.
             </p>
+            <div className="mt-8">
+              <Link
+                href="/get-involved"
+                className="btn-primary inline-flex items-center justify-center px-6 py-3 rounded-full text-sm font-bold uppercase tracking-wide"
+              >
+                See one you want in on? Apply to Pull Up →
+              </Link>
+            </div>
           </div>
         </section>
 

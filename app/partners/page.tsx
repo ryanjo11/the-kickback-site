@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import Community from "../components/Community";
@@ -110,6 +111,28 @@ export default function PartnersPage() {
                   </div>
                 </div>
               </div>
+            </div>
+
+            {/* Vendor applications CTA */}
+            <div className="mt-6 border border-ice/30 bg-ice/[0.03] p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-5">
+              <div>
+                <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-ice mb-2">
+                  ● vendor village · sun dec 13
+                </div>
+                <h4 className="font-display text-2xl md:text-3xl uppercase leading-[0.95]">
+                  Selling something? Pull up to The Tabernacle.
+                </h4>
+                <p className="mt-2 text-sm text-frost/70 max-w-xl">
+                  Free table space for streetwear, sneakers, art, jewelry,
+                  and vintage. Applications close Dec 2.
+                </p>
+              </div>
+              <Link
+                href="/get-involved"
+                className="btn-primary inline-flex items-center justify-center px-6 py-3 rounded-full text-sm font-bold uppercase tracking-wide shrink-0"
+              >
+                Apply as a Vendor →
+              </Link>
             </div>
           </div>
         </section>
