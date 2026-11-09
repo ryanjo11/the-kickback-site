@@ -18,7 +18,7 @@ const talent: Artist[] = [
 
 function accent(a: Artist["accent"]) {
   if (a === "hot")
-    return { text: "text-[#FF3E88]", border: "border-[#FF3E88]/50" };
+    return { text: "text-[#D9252A]", border: "border-[#D9252A]/50" };
   return { text: "text-ice", border: "border-ice/50" };
 }
 

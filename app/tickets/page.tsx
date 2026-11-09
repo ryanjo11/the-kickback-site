@@ -164,10 +164,10 @@ const days: Day[] = [
 function accentMeta(a: Tier["accent"]) {
   if (a === "hot")
     return {
-      hex: "#FF3E88",
-      text: "text-[#FF3E88]",
-      border: "border-[#FF3E88]/60",
-      bg: "bg-[#FF3E88]/10",
+      hex: "#D9252A",
+      text: "text-[#D9252A]",
+      border: "border-[#D9252A]/60",
+      bg: "bg-[#D9252A]/10",
     };
   if (a === "royal")
     return {
@@ -177,7 +177,7 @@ function accentMeta(a: Tier["accent"]) {
       bg: "bg-ice/10",
     };
   return {
-    hex: "#BDE0F8",
+    hex: "#4DD8F0",
     text: "text-ice",
     border: "border-ice/60",
     bg: "bg-ice/10",
@@ -197,7 +197,7 @@ function DayPanel({ d, wide = false }: { d: Day; wide?: boolean }) {
         className="absolute inset-0 pointer-events-none opacity-[0.06]"
         style={{
           backgroundImage:
-            "repeating-linear-gradient(0deg, #BDE0F8 0px, #BDE0F8 1px, transparent 1px, transparent 3px)",
+            "repeating-linear-gradient(0deg, #4DD8F0 0px, #4DD8F0 1px, transparent 1px, transparent 3px)",
         }}
       />
       {/* Corner brackets */}
@@ -225,7 +225,7 @@ function DayPanel({ d, wide = false }: { d: Day; wide?: boolean }) {
         <div className="text-right font-mono text-[10px] uppercase tracking-[0.25em]">
           <div className="text-frost/40">SLOT</div>
           <div className="text-ice">{d.code}</div>
-          <div className="text-[#FF3E88] mt-2">● {d.status}</div>
+          <div className="text-[#D9252A] mt-2">● {d.status}</div>
         </div>
       </div>
 
@@ -352,8 +352,8 @@ function DayPanel({ d, wide = false }: { d: Day; wide?: boolean }) {
             {d.status.toUpperCase()}
           </div>
         ) : (
-          <div className="text-[#FF3E88] flex items-center gap-2">
-            <span className="w-1.5 h-1.5 bg-[#FF3E88] animate-pulse" />
+          <div className="text-[#D9252A] flex items-center gap-2">
+            <span className="w-1.5 h-1.5 bg-[#D9252A] animate-pulse" />
             ON SALE SOON
           </div>
         )}
@@ -429,42 +429,47 @@ const matrixFeatures: { key: string; label: string; note?: string }[] = [
 ];
 
 function tierColor(t: MatrixTier) {
-  if (t.accent === "hot") return "#FF3E88";
-  return "#BDE0F8";
+  if (t.accent === "hot") return "#D9252A";
+  return "#4DD8F0";
 }
 
 function TicketMatrixMobile() {
   return (
-    <div className="md:hidden space-y-4">
+    <div className="md:hidden space-y-8">
       {matrixTiers.map((t) => {
         const color = tierColor(t);
+        const isRed = t.accent === "hot";
         const includedFeatures = matrixFeatures.filter((f) => t.features[f.key]);
         return (
           <div
             key={t.code}
-            className={`border-2 bg-black p-4 ${
-              t.best ? "border-ice bg-ice/[0.04]" : "border-ice/30"
-            }`}
+            className={`relative ${isRed ? "paper-cyan-shadow" : "paper-red-shadow"} bg-cream text-ink p-5`}
           >
+            {/* Tape sticker */}
+            <div
+              className={`${isRed ? "tape-cyan" : "tape-red"} absolute -top-3 left-6 rotate-2`}
+              aria-hidden
+            />
+
             {/* Header */}
-            <div className="flex items-start justify-between gap-3 pb-3 border-b border-white/10">
+            <div className="flex items-start justify-between gap-3 pb-3 border-b border-ink/20">
               <div>
                 <div
-                  className="font-mono text-[9px] uppercase tracking-widest mb-1"
+                  className="font-mono text-[9px] uppercase tracking-widest mb-1 font-bold"
                   style={{ color }}
                 >
                   ● {t.day} · {t.dayDate} · {t.code}
                 </div>
-                <div className="font-display text-xl uppercase leading-none">
+                <div className="font-chunk text-xl uppercase leading-[1.1] text-ink">
                   {t.name}
                 </div>
-                <div className="font-mono text-[10px] uppercase tracking-widest text-frost/50 mt-1">
+                <div className="font-mono text-[10px] uppercase tracking-widest text-ink/55 mt-1">
                   {t.window}
                 </div>
               </div>
               <div
-                className="font-display text-3xl leading-none shrink-0"
-                style={{ color, letterSpacing: "-0.02em" }}
+                className="font-chunk text-3xl leading-none shrink-0"
+                style={{ color }}
               >
                 {t.price}
               </div>
@@ -472,23 +477,26 @@ function TicketMatrixMobile() {
 
             {/* Best value tag */}
             {t.best && (
-              <div className="pt-3 font-mono text-[9px] uppercase tracking-widest text-ice font-bold">
+              <div
+                className="pt-3 font-mono text-[9px] uppercase tracking-widest font-bold"
+                style={{ color }}
+              >
                 ★ BEST VALUE
               </div>
             )}
 
             {/* Includes */}
             <div className="pt-3">
-              <div className="font-mono text-[9px] uppercase tracking-widest text-frost/40 mb-2">
+              <div className="font-mono text-[9px] uppercase tracking-widest text-ink/50 mb-2">
                 includes
               </div>
               <ul className="space-y-1.5">
                 {includedFeatures.map((f) => (
                   <li
                     key={f.key}
-                    className="flex items-start gap-2 text-xs text-frost/80 font-mono leading-snug"
+                    className="flex items-start gap-2 text-xs text-ink/80 font-mono leading-snug"
                   >
-                    <span style={{ color }} className="shrink-0">
+                    <span style={{ color }} className="shrink-0 font-bold">
                       ✓
                     </span>
                     <span>{f.label}</span>
@@ -498,23 +506,26 @@ function TicketMatrixMobile() {
             </div>
 
             {/* Status / CTA */}
-            <div className="pt-3 mt-3 border-t border-white/10">
+            <div className="pt-3 mt-3 border-t border-ink/20">
               {t.ticketUrl ? (
                 <a
                   href={t.ticketUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center w-full px-4 py-3 font-mono text-[11px] uppercase tracking-[0.3em] font-bold text-ink"
+                  className="inline-flex items-center justify-center w-full px-4 py-3 font-mono text-[11px] uppercase tracking-[0.3em] font-bold text-cream"
                   style={{ background: color }}
                 >
                   {t.price === "FREE" ? "RSVP Now" : "Buy Tickets"} →
                 </a>
               ) : t.price === "FREE" ? (
-                <span className="font-mono text-[9px] uppercase tracking-widest text-ice">
+                <span
+                  className="font-mono text-[9px] uppercase tracking-widest font-bold"
+                  style={{ color }}
+                >
                   ● RSVP SOON
                 </span>
               ) : (
-                <span className="font-mono text-[9px] uppercase tracking-widest text-[#FF3E88]">
+                <span className="font-mono text-[9px] uppercase tracking-widest text-red font-bold">
                   ● ON SALE SOON
                 </span>
               )}
@@ -653,7 +664,7 @@ function TicketMatrix() {
                       ● RSVP SOON
                     </span>
                   ) : (
-                    <span className="font-mono text-[9px] uppercase tracking-widest text-[#FF3E88]">
+                    <span className="font-mono text-[9px] uppercase tracking-widest text-[#D9252A]">
                       ● ON SALE SOON
                     </span>
                   )}
@@ -691,8 +702,8 @@ export default function TicketsPage() {
               <span className="text-frost/50">/</span>
               <span className="text-ice">● on sale · fri + sat</span>
             </div>
-            <h1 className="font-display text-6xl md:text-8xl uppercase leading-[0.9]">
-              The <span className="text-ice">tickets.</span>
+            <h1 className="font-chunk cyan-glow text-6xl md:text-8xl uppercase leading-[0.9]">
+              The <span className="text-cyan">tickets.</span>
             </h1>
             <p className="mt-6 max-w-xl text-frost/70 leading-relaxed">
               Three nights. Seven ways to pull up. Friday + Saturday are live

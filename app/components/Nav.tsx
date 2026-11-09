@@ -159,7 +159,7 @@ export default function Nav() {
           {/* Top bar inside menu */}
           <div className="flex items-center justify-between px-6 h-16 border-b border-white/10">
             <div className="font-mono text-[10px] uppercase tracking-widest text-ice flex items-center gap-2">
-              <span className="w-1.5 h-1.5 bg-[#FF3E88] rounded-full animate-pulse" />
+              <span className="w-1.5 h-1.5 bg-[#D9252A] rounded-full animate-pulse" />
               menu / the kickback
             </div>
             <button

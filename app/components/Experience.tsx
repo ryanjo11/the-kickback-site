@@ -96,26 +96,26 @@ const tentpoles: Tentpole[] = [
 function accentClasses(a: "acid" | "hot") {
   if (a === "acid")
     return {
-      text: "text-[#BDE0F8]",
-      border: "border-[#BDE0F8]/40",
+      text: "text-[#4DD8F0]",
+      border: "border-[#4DD8F0]/40",
     };
   return {
-    text: "text-[#FF3E88]",
-    border: "border-[#FF3E88]/40",
+    text: "text-[#D9252A]",
+    border: "border-[#D9252A]/40",
   };
 }
 
 export default function Experience() {
   return (
-    <section id="experience" className="relative py-24 md:py-32">
-      <div className="max-w-7xl mx-auto px-6 md:px-10">
+    <section id="experience" className="relative py-24 md:py-32 grain-subtle">
+      <div className="max-w-7xl mx-auto px-6 md:px-10 relative">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
           <div className="max-w-2xl">
-            <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-[#BDE0F8] mb-3">
+            <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-red mb-3">
               ● pillars / 09
             </div>
-            <h2 className="font-display text-5xl md:text-6xl leading-[0.95] uppercase">
-              Weekend <span className="text-[#BDE0F8]">Programming</span>
+            <h2 className="font-chunk cyan-glow text-5xl md:text-6xl leading-[0.95] uppercase">
+              Weekend <span className="text-cyan">Programming</span>
             </h2>
           </div>
           <p className="text-frost/70 max-w-md text-base md:text-lg">
@@ -124,37 +124,48 @@ export default function Experience() {
           </p>
         </div>
 
-        {/* Polaroid collage */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 pt-4 pb-8 md:px-4">
-          {tentpoles.map((t) => {
-            const a = accentClasses(t.accent);
+        {/* Zine card collage */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-10 pt-6 pb-8 md:px-4">
+          {tentpoles.map((t, i) => {
+            const isRed = t.accent === "hot";
+            const shadowClass = isRed ? "paper-red-shadow" : "paper-cyan-shadow";
+            const tapeClass = isRed ? "tape-cyan" : "tape-red";
+            const stampColor = isRed ? "#D9252A" : "#4DD8F0";
+            const stampRotate = i % 2 === 0 ? "-rotate-6" : "rotate-6";
             return (
               <article
                 key={t.num}
-                className={`${t.rotate} hover:rotate-0 hover:scale-105 transition-transform duration-300`}
+                className={`${t.rotate} ${shadowClass} bg-cream text-ink p-3 pb-5 transition-transform duration-300 hover:rotate-0 hover:translate-y-[-4px]`}
               >
-                <div className="bg-frost text-ink p-3 pb-5 shadow-2xl">
+                {/* Tape sticker */}
+                <div
+                  className={`${tapeClass} absolute -top-3 left-1/2 -translate-x-1/2 ${i % 2 === 0 ? "rotate-2" : "-rotate-2"}`}
+                  aria-hidden
+                />
+                {/* Photo with heavy grain */}
+                <div className="relative aspect-square overflow-hidden border-2 border-ink/80 grain-heavy">
+                  <Image
+                    src={t.photo}
+                    alt={t.title}
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 768px) 33vw, 50vw"
+                  />
+                  {/* Rotated number stamp */}
                   <div
-                    className={`relative aspect-square overflow-hidden border-2 ${a.border}`}
+                    className={`absolute top-2 right-2 ${stampRotate} font-chunk text-cream text-xs md:text-sm uppercase px-2 py-1 border-2 border-cream`}
+                    style={{ background: stampColor }}
                   >
-                    <Image
-                      src={t.photo}
-                      alt={t.title}
-                      fill
-                      className="object-cover"
-                      sizes="(min-width: 768px) 33vw, 50vw"
-                    />
+                    #{t.num}
                   </div>
-                  <div className="mt-3 px-1">
-                    <div className="font-mono text-[9px] text-ink/50 uppercase tracking-[0.25em]">
-                      {t.num} / 09
-                    </div>
-                    <div className="font-display text-base md:text-lg uppercase leading-tight text-ink mt-0.5">
-                      {t.title}
-                    </div>
-                    <div className="hidden md:block text-[10px] text-ink/60 mt-1 leading-snug line-clamp-3">
-                      {t.blurb}
-                    </div>
+                </div>
+                {/* Caption */}
+                <div className="mt-4 px-1">
+                  <div className="font-chunk text-sm md:text-lg uppercase leading-[1.1] text-ink">
+                    {t.title}
+                  </div>
+                  <div className="hidden md:block text-[10px] text-ink/65 mt-2 leading-snug line-clamp-3">
+                    {t.blurb}
                   </div>
                 </div>
               </article>

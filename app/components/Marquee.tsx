@@ -15,13 +15,13 @@ export default function Marquee() {
 
   return (
     <>
-      <div className="relative z-20 overflow-hidden border-y-2 border-[#BDE0F8] py-2.5 bg-[#BDE0F8]/5">
+      <div className="relative z-20 overflow-hidden border-y-2 border-[#4DD8F0] py-2.5 bg-[#4DD8F0]/5">
         <div className="flex whitespace-nowrap animate-marquee gap-8 font-display text-lg md:text-xl uppercase tracking-wide">
           {Array.from({ length: 4 }).map((_, i) => (
             <div key={i} className="flex items-center gap-8 shrink-0">
               {items.map((t, j) => (
                 <span key={j} className="flex items-center gap-8">
-                  <span className="text-[#BDE0F8]">●</span>
+                  <span className="text-[#4DD8F0]">●</span>
                   <span>{t}</span>
                   <span className="text-frost/40">/</span>
                 </span>

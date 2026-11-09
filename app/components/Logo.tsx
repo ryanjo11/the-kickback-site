@@ -20,7 +20,7 @@ export default function Logo({ size = "md", className = "" }: LogoProps) {
         className={`font-script leading-none ${sizes[size]}`}
         style={{
           background:
-            "linear-gradient(180deg, #ffffff 0%, #bde0f8 45%, #7cc4f5 75%, #1b5fb5 100%)",
+            "linear-gradient(180deg, #ffffff 0%, #4dd8f0 45%, #7cc4f5 75%, #1b5fb5 100%)",
           WebkitBackgroundClip: "text",
           backgroundClip: "text",
           color: "transparent",

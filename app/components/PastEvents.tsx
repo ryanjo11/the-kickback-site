@@ -67,8 +67,8 @@ const collageShots: Shot[] = [
 ];
 
 function accentClasses(a?: "acid" | "hot" | "ice") {
-  if (a === "acid") return { border: "border-[#BDE0F8]/50", text: "text-[#BDE0F8]", bg: "bg-[#BDE0F8]/10" };
-  if (a === "hot") return { border: "border-[#FF3E88]/50", text: "text-[#FF3E88]", bg: "bg-[#FF3E88]/10" };
+  if (a === "acid") return { border: "border-[#4DD8F0]/50", text: "text-[#4DD8F0]", bg: "bg-[#4DD8F0]/10" };
+  if (a === "hot") return { border: "border-[#D9252A]/50", text: "text-[#D9252A]", bg: "bg-[#D9252A]/10" };
   return { border: "border-ice/40", text: "text-ice", bg: "bg-ice/10" };
 }
 
@@ -97,11 +97,11 @@ export default function PastEvents() {
       <div className="max-w-7xl mx-auto px-6 md:px-10 mb-12">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div>
-            <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-[#BDE0F8] mb-3">
+            <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-[#4DD8F0] mb-3">
               ● archive / 2024 → 2025
             </div>
             <h2 className="font-display text-5xl md:text-6xl uppercase leading-[0.95]">
-              The <span className="text-[#BDE0F8]">moments</span>
+              The <span className="text-[#4DD8F0]">moments</span>
               <br />
               so far.
             </h2>

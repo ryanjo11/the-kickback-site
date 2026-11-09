@@ -1,5 +1,6 @@
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
+import Poster from "./components/Poster";
 import Intro from "./components/Intro";
 import Experience from "./components/Experience";
 import Talent from "./components/Talent";
@@ -12,6 +13,7 @@ export default function Home() {
       <Nav />
       <main className="bg-ink text-frost">
         <Hero />
+        <Poster />
         <Intro />
         <Experience />
         <Talent />

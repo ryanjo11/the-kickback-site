@@ -35,13 +35,13 @@ export default function AtlantaPage() {
 
           <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 pt-40 pb-20 w-full">
             <div className="flex items-center gap-3 mb-4 font-mono text-[10px] uppercase tracking-[0.3em]">
-              <span className="text-[#BDE0F8]">● REC</span>
+              <span className="text-[#4DD8F0]">● REC</span>
               <span className="text-frost/50">/</span>
               <span className="text-frost/70">atlanta flagship · three nights</span>
               <span className="text-frost/50">/</span>
-              <span className="text-[#BDE0F8]">● on sale · fri + sat</span>
+              <span className="text-[#4DD8F0]">● on sale · fri + sat</span>
             </div>
-            <h1 className="font-display text-7xl md:text-[10rem] uppercase leading-[0.85]">
+            <h1 className="font-chunk cyan-glow text-7xl md:text-[10rem] uppercase leading-[0.85]">
               Atlanta
               <br />
               <span className="text-ice">12.11–13</span>

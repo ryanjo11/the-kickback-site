@@ -301,11 +301,11 @@ const days: Day[] = [
 ];
 
 function kindMeta(k: Kind) {
-  if (k === "concert") return { hex: "#FF3E88", label: "concert" };
-  if (k === "tournament") return { hex: "#BDE0F8", label: "tournament" };
-  if (k === "panel") return { hex: "#BDE0F8", label: "panel" };
-  if (k === "creator") return { hex: "#BDE0F8", label: "creator" };
-  if (k === "mixer") return { hex: "#FF3E88", label: "mixer" };
+  if (k === "concert") return { hex: "#D9252A", label: "concert" };
+  if (k === "tournament") return { hex: "#4DD8F0", label: "tournament" };
+  if (k === "panel") return { hex: "#4DD8F0", label: "panel" };
+  if (k === "creator") return { hex: "#4DD8F0", label: "creator" };
+  if (k === "mixer") return { hex: "#D9252A", label: "mixer" };
   return { hex: "#7CC4F5", label: "off-air" };
 }
 
@@ -336,8 +336,8 @@ function DayStream({
       {/* Header bar */}
       <div className="flex flex-wrap items-center justify-between gap-3 px-4 py-3 border-b-2 border-ice/40 bg-ink-soft">
         <div className="flex items-center gap-3">
-          <div className="w-2.5 h-2.5 bg-[#FF3E88] rounded-full animate-pulse" />
-          <div className="font-mono text-[10px] uppercase tracking-widest text-[#FF3E88] font-bold">
+          <div className="w-2.5 h-2.5 bg-[#D9252A] rounded-full animate-pulse" />
+          <div className="font-mono text-[10px] uppercase tracking-widest text-[#D9252A] font-bold">
             {d.day.toUpperCase()} · LIVE
           </div>
           <div className="font-display text-base md:text-lg uppercase leading-none">
@@ -363,9 +363,9 @@ function DayStream({
       )}
 
       {/* NOW STREAMING featured block */}
-      <div className="p-4 md:p-5 border-b-2 border-white/10 bg-gradient-to-r from-[#FF3E88]/15 via-[#FF3E88]/5 to-transparent">
-        <div className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest text-[#FF3E88] mb-2">
-          <span className="w-1.5 h-1.5 bg-[#FF3E88] animate-pulse" />
+      <div className="p-4 md:p-5 border-b-2 border-white/10 bg-gradient-to-r from-[#D9252A]/15 via-[#D9252A]/5 to-transparent">
+        <div className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest text-[#D9252A] mb-2">
+          <span className="w-1.5 h-1.5 bg-[#D9252A] animate-pulse" />
           featured stream · {featured.timeMono}
         </div>
         <div className="font-display text-2xl md:text-4xl uppercase leading-none">
@@ -527,9 +527,9 @@ function DayStream({
 
       {/* Parallel stream (Level 3) */}
       {d.parallel && (
-        <div className="border-t-2 border-[#FF3E88]/50 bg-[#FF3E88]/[0.05]">
-          <div className="px-4 py-3 border-b border-[#FF3E88]/30 flex items-center gap-3">
-            <div className="w-2 h-2 bg-[#FF3E88] rounded-full animate-pulse" />
+        <div className="border-t-2 border-[#D9252A]/50 bg-[#D9252A]/[0.05]">
+          <div className="px-4 py-3 border-b border-[#D9252A]/30 flex items-center gap-3">
+            <div className="w-2 h-2 bg-[#D9252A] rounded-full animate-pulse" />
             <div>
               <div className="font-display text-base md:text-lg uppercase leading-none">
                 {d.parallel.label}
@@ -543,9 +543,9 @@ function DayStream({
             {d.parallel.items.map((item, i) => (
               <li
                 key={i}
-                className="grid grid-cols-12 gap-3 items-center px-4 py-2.5 hover:bg-[#FF3E88]/10"
+                className="grid grid-cols-12 gap-3 items-center px-4 py-2.5 hover:bg-[#D9252A]/10"
               >
-                <div className="col-span-3 md:col-span-2 font-mono text-xs text-[#FF3E88] tabular-nums">
+                <div className="col-span-3 md:col-span-2 font-mono text-xs text-[#D9252A] tabular-nums">
                   {item.timeMono}
                 </div>
                 <div className="col-span-6 md:col-span-7">
@@ -559,7 +559,7 @@ function DayStream({
                   )}
                 </div>
                 <div className="col-span-3 text-right">
-                  <span className="font-mono text-[9px] uppercase tracking-widest text-[#FF3E88]">
+                  <span className="font-mono text-[9px] uppercase tracking-widest text-[#D9252A]">
                     ◉ private
                   </span>
                 </div>
@@ -577,7 +577,7 @@ function DayStream({
         </div>
         <Link
           href="#waitlist"
-          className="bg-[#FF3E88] text-frost px-4 py-2 font-display uppercase text-xs tracking-widest hover:bg-ice hover:text-ink transition-colors"
+          className="bg-[#D9252A] text-frost px-4 py-2 font-display uppercase text-xs tracking-widest hover:bg-ice hover:text-ink transition-colors"
         >
           + FOLLOW / GET ON THE LIST
         </Link>
@@ -604,15 +604,15 @@ export default function SchedulePage() {
           <div className="absolute inset-0 bg-gradient-to-b from-ink/50 via-ink/30 to-ink" />
           <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-10 w-full">
             <div className="flex items-center gap-3 mb-4 font-mono text-[10px] uppercase tracking-[0.3em]">
-              <span className="w-2 h-2 bg-[#FF3E88] rounded-full animate-pulse" />
-              <span className="text-[#FF3E88]">LIVE</span>
+              <span className="w-2 h-2 bg-[#D9252A] rounded-full animate-pulse" />
+              <span className="text-[#D9252A]">LIVE</span>
               <span className="text-frost/50">/</span>
               <span className="text-frost/70">atlanta · dec 11–13</span>
               <span className="text-frost/50">/</span>
               <span className="text-ice">the kickback</span>
             </div>
-            <h1 className="font-display text-6xl md:text-8xl uppercase leading-[0.9]">
-              The <span className="text-ice">schedule.</span>
+            <h1 className="font-chunk cyan-glow text-6xl md:text-8xl uppercase leading-[0.9]">
+              The <span className="text-cyan">schedule.</span>
             </h1>
             <p className="mt-6 max-w-xl text-frost/70 leading-relaxed">
               Three nights. Opening at the skate park. Closing at the Tabernacle. Panel
@@ -635,41 +635,28 @@ export default function SchedulePage() {
             <div className="border-2 border-ice/40 bg-black">
               {days.map((d) => {
                 const isFlagship = d.day === "Sun";
-                const accent = isFlagship ? "#FF3E88" : "#BDE0F8";
+                const accent = isFlagship ? "#D9252A" : "#4DD8F0";
                 return (
                   <div key={d.date}>
-                    {/* Sticky day banner */}
-                    <div
-                      className="sticky top-0 z-20 px-5 py-4 border-y-2 flex items-center justify-between gap-3 backdrop-blur-md"
-                      style={{
-                        borderColor: accent,
-                        background:
-                          "linear-gradient(90deg, " +
-                          accent +
-                          "25 0%, rgba(0,0,0,0.9) 50%, rgba(0,0,0,0.9) 100%)",
-                      }}
-                    >
-                      <div className="flex items-baseline gap-3 flex-wrap">
-                        <div className="flex items-center gap-2">
+                    {/* Zine day banner — cream paper, hard color shadow */}
+                    <div className="sticky top-0 z-20 px-5 py-6 md:py-8 bg-ink/95 backdrop-blur-md">
+                      <div
+                        className={`relative inline-block ${isFlagship ? "paper-red-shadow" : "paper-cyan-shadow"} bg-cream px-5 py-3 md:px-7 md:py-4`}
+                      >
+                        <div className="flex items-baseline gap-3 flex-wrap">
                           <span
-                            className="w-2 h-2 rounded-full animate-pulse"
-                            style={{ backgroundColor: accent }}
-                          />
-                          <span
-                            className="font-mono text-[10px] uppercase tracking-widest font-bold"
-                            style={{ color: accent }}
+                            className="font-mono text-[10px] uppercase tracking-widest font-bold text-ink/60"
                           >
-                            {d.day.toUpperCase()} · LIVE
+                            ◉ {d.day.toUpperCase()} · LIVE
                           </span>
-                        </div>
-                        <div
-                          className="font-display text-2xl md:text-4xl uppercase leading-none"
-                          style={{ color: accent }}
-                        >
-                          {d.day} · {d.date.split(",")[0]}
-                        </div>
-                        <div className="font-mono text-[10px] uppercase tracking-widest text-frost/70 hidden md:block">
-                          ▸ {d.venue}
+                          <span
+                            className="font-chunk text-2xl md:text-4xl uppercase leading-none text-ink"
+                          >
+                            {d.day} · {d.date.split(",")[0]}
+                          </span>
+                          <span className="hidden md:inline-block font-mono text-[10px] uppercase tracking-widest text-ink/55">
+                            ▸ {d.venue}
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -799,7 +786,7 @@ export default function SchedulePage() {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="inline-flex items-center justify-center px-4 py-2 font-mono text-[10px] uppercase tracking-[0.3em] font-bold text-ink"
-                                    style={{ background: "#FF3E88" }}
+                                    style={{ background: "#D9252A" }}
                                   >
                                     {item.registerLabel || "Register →"}
                                   </a>
@@ -813,9 +800,9 @@ export default function SchedulePage() {
 
                     {/* Parallel track — Sunday Level 3 */}
                     {d.parallel && (
-                      <div className="border-t-2 border-[#FF3E88]/50 bg-[#FF3E88]/[0.05]">
-                        <div className="px-5 py-4 border-b border-[#FF3E88]/30 flex items-start gap-3">
-                          <span className="w-2 h-2 bg-[#FF3E88] rounded-full animate-pulse mt-1.5" />
+                      <div className="border-t-2 border-[#D9252A]/50 bg-[#D9252A]/[0.05]">
+                        <div className="px-5 py-4 border-b border-[#D9252A]/30 flex items-start gap-3">
+                          <span className="w-2 h-2 bg-[#D9252A] rounded-full animate-pulse mt-1.5" />
                           <div>
                             <div className="font-display text-lg md:text-xl uppercase leading-none">
                               {d.parallel.label}
@@ -829,9 +816,9 @@ export default function SchedulePage() {
                           {d.parallel.items.map((item, i) => (
                             <li
                               key={i}
-                              className="grid grid-cols-12 gap-3 items-start px-5 py-3 hover:bg-[#FF3E88]/10"
+                              className="grid grid-cols-12 gap-3 items-start px-5 py-3 hover:bg-[#D9252A]/10"
                             >
-                              <div className="col-span-3 md:col-span-2 font-mono text-xs text-[#FF3E88] tabular-nums pt-0.5">
+                              <div className="col-span-3 md:col-span-2 font-mono text-xs text-[#D9252A] tabular-nums pt-0.5">
                                 {item.timeMono}
                               </div>
                               <div className="col-span-9 md:col-span-10">
@@ -854,9 +841,9 @@ export default function SchedulePage() {
               })}
             </div>
 
-            <div className="mt-10 border-2 border-[#FF3E88]/40 bg-[#FF3E88]/[0.05] p-5 text-center">
-              <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-[#FF3E88] mb-2 flex items-center justify-center gap-2">
-                <span className="w-1.5 h-1.5 bg-[#FF3E88] rounded-full animate-pulse" />
+            <div className="mt-10 border-2 border-[#D9252A]/40 bg-[#D9252A]/[0.05] p-5 text-center">
+              <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-[#D9252A] mb-2 flex items-center justify-center gap-2">
+                <span className="w-1.5 h-1.5 bg-[#D9252A] rounded-full animate-pulse" />
                 incoming signal
               </div>
               <p className="font-mono text-xs text-frost/70 max-w-xl mx-auto leading-relaxed">

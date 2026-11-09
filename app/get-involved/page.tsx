@@ -77,7 +77,7 @@ export default function GetInvolvedPage() {
               <span className="text-frost/50">/</span>
               <span className="text-frost/70">close dec 2 · 2026</span>
             </div>
-            <h1 className="font-display text-6xl md:text-8xl uppercase leading-[0.9]">
+            <h1 className="font-chunk cyan-glow text-6xl md:text-8xl uppercase leading-[0.9]">
               Get <span className="text-ice">involved.</span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg md:text-xl text-frost/80 leading-relaxed">
@@ -92,7 +92,7 @@ export default function GetInvolvedPage() {
           <div className="max-w-7xl mx-auto px-6 md:px-10">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
               {cards.map((c) => {
-                const hex = c.accent === "hot" ? "#FF3E88" : "#BDE0F8";
+                const hex = c.accent === "hot" ? "#D9252A" : "#4DD8F0";
                 const isExternal = c.href.startsWith("http");
                 return (
                   <Link

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Anton, Inter, Caveat_Brush } from "next/font/google";
+import { Anton, Inter, Caveat_Brush, Bungee } from "next/font/google";
 import "./globals.css";
 
 const anton = Anton({
@@ -16,6 +16,12 @@ const inter = Inter({
 const caveat = Caveat_Brush({
   weight: "400",
   variable: "--font-script",
+  subsets: ["latin"],
+});
+
+const bungee = Bungee({
+  weight: "400",
+  variable: "--font-chunk",
   subsets: ["latin"],
 });
 
@@ -47,7 +53,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${anton.variable} ${inter.variable} ${caveat.variable} h-full antialiased`}
+      className={`${anton.variable} ${inter.variable} ${caveat.variable} ${bungee.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-ink text-frost font-body">{children}</body>
     </html>

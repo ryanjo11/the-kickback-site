@@ -81,9 +81,9 @@ const stops: Stop[] = [
 
 function accentClasses(a: "acid" | "hot" | "ice") {
   if (a === "acid")
-    return { text: "text-[#BDE0F8]", border: "border-[#BDE0F8]/50" };
+    return { text: "text-[#4DD8F0]", border: "border-[#4DD8F0]/50" };
   if (a === "hot")
-    return { text: "text-[#FF3E88]", border: "border-[#FF3E88]/50" };
+    return { text: "text-[#D9252A]", border: "border-[#D9252A]/50" };
   return { text: "text-ice", border: "border-ice/50" };
 }
 
@@ -98,11 +98,11 @@ export default function Tour() {
     <section id="tour" className="relative py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-6 md:px-10">
         <div className="mb-14">
-          <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-[#BDE0F8] mb-3">
+          <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-[#4DD8F0] mb-3">
             ● tour / 2026 → 2027
           </div>
           <h2 className="font-display text-5xl md:text-7xl uppercase leading-[0.95]">
-            The <span className="text-[#BDE0F8]">tour</span> dates.
+            The <span className="text-[#4DD8F0]">tour</span> dates.
           </h2>
         </div>
 

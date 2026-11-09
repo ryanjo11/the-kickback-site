@@ -92,7 +92,7 @@ export default function Footer() {
           ))}
 
           <div className="md:col-span-1 flex md:justify-end items-start font-mono text-[10px] uppercase tracking-[0.3em] text-frost/40">
-            <span><span className="text-[#BDE0F8]">●</span> rec</span>
+            <span><span className="text-[#4DD8F0]">●</span> rec</span>
           </div>
         </div>
 

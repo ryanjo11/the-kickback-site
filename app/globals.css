@@ -1,16 +1,24 @@
 @import "tailwindcss";
 
 @theme {
+  /* Core ink */
   --color-ink: #000000;
   --color-ink-soft: #000000;
-  --color-royal: #1b5fb5;
-  --color-royal-deep: #0b3a78;
-  --color-ice: #bde0f8;
-  --color-ice-soft: #e7f3fc;
-  --color-frost: #ffffff;
-  --color-spark: #7cc4f5;
-  --color-acid: #b4ff39;
-  --color-hot: #ff3e88;
+
+  /* Brand Hybrid — new primary palette */
+  --color-red: #d9252a;
+  --color-cyan: #4dd8f0;
+  --color-cream: #f5f1e3;
+
+  /* Legacy token names remapped to hybrid palette so every page inherits automatically */
+  --color-hot: #d9252a;           /* was pink #ff3e88 → now hybrid red */
+  --color-ice: #4dd8f0;           /* was pale blue #bde0f8 → now hybrid cyan */
+  --color-ice-soft: #cfeff7;      /* was very pale blue → soft cyan tint */
+  --color-frost: #f5f1e3;         /* was pure white → cream paper */
+  --color-spark: #4dd8f0;         /* was #7cc4f5 → cyan */
+  --color-royal: #d9252a;         /* was steel blue → red */
+  --color-royal-deep: #8a1418;    /* was deep navy → deep red */
+  --color-acid: #4dd8f0;          /* deprecated usages fall back to cyan */
 
   --font-display: "Anton", "Arial Black", sans-serif;
   --font-body: "Inter", "Helvetica Neue", Arial, sans-serif;
@@ -47,20 +55,86 @@ body {
   font-family: var(--font-script);
 }
 
+/* Bungee — chunky stencil display, used for hybrid-brand headlines */
+.font-chunk {
+  font-family: var(--font-chunk), "Impact", "Arial Black", sans-serif;
+  letter-spacing: 0;
+}
+
 .text-stroke {
   -webkit-text-stroke: 1px var(--color-frost);
   color: transparent;
 }
 
-/* Film-grain noise overlay */
-.grain::after {
+/* Film-grain noise overlays */
+.grain::after,
+.grain-subtle::after,
+.grain-heavy::after {
   content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='200' height='200' filter='url(%23n)' opacity='0.85'/></svg>");
+}
+.grain::after {
   opacity: 0.06;
   mix-blend-mode: screen;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='160' height='160' filter='url(%23n)' opacity='0.6'/></svg>");
+}
+.grain-subtle::after {
+  opacity: 0.22;
+  mix-blend-mode: overlay;
+}
+.grain-heavy::after {
+  opacity: 0.4;
+  mix-blend-mode: multiply;
+}
+
+/* Paper card — cream background with red hard-shadow offset (zine aesthetic) */
+.paper {
+  position: relative;
+  background: var(--color-cream);
+  color: var(--color-ink);
+}
+/* Hard color shadow via box-shadow (renders fully behind element, won't
+   conflict with background or stacking context). */
+.paper-red-shadow {
+  box-shadow: 6px 6px 0 0 var(--color-red);
+}
+.paper-cyan-shadow {
+  box-shadow: 6px 6px 0 0 var(--color-cyan);
+}
+
+/* Tape stickers — diagonal stripes */
+.tape-cyan,
+.tape-red {
+  width: 6rem;
+  height: 1.75rem;
+  opacity: 0.9;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+.tape-cyan {
+  background: repeating-linear-gradient(
+    45deg,
+    var(--color-cyan) 0 6px,
+    rgba(77, 216, 240, 0.8) 6px 12px
+  );
+}
+.tape-red {
+  background: repeating-linear-gradient(
+    45deg,
+    var(--color-red) 0 6px,
+    rgba(217, 37, 42, 0.8) 6px 12px
+  );
+}
+
+/* Cyan outer glow for display text */
+.cyan-glow {
+  color: var(--color-cream);
+  text-shadow:
+    0 0 1px var(--color-cyan),
+    0 0 4px var(--color-cyan),
+    0 0 12px rgba(77, 216, 240, 0.4),
+    0 0 24px rgba(77, 216, 240, 0.2);
 }
 
 /* Marquee scroll */
@@ -94,33 +168,33 @@ body {
   border-color: var(--color-ice);
 }
 
-/* Glow ring for primary buttons */
+/* Glow ring for primary buttons — hybrid cream paper + red shadow */
 .btn-primary {
-  background: var(--color-frost);
+  background: var(--color-cream);
   color: var(--color-ink);
   box-shadow:
-    0 0 0 1px var(--color-frost),
-    0 8px 30px -10px rgba(189, 224, 248, 0.7),
-    0 0 28px -6px rgba(124, 196, 245, 0.55);
+    0 0 0 1px var(--color-cream),
+    0 8px 30px -10px rgba(217, 37, 42, 0.5),
+    0 0 28px -6px rgba(77, 216, 240, 0.45);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .btn-primary:hover {
   transform: translateY(-2px);
   box-shadow:
-    0 0 0 1px var(--color-ice),
-    0 12px 36px -10px rgba(189, 224, 248, 0.9),
-    0 0 36px -4px rgba(124, 196, 245, 0.7);
+    0 0 0 1px var(--color-red),
+    0 12px 36px -10px rgba(217, 37, 42, 0.8),
+    0 0 36px -4px rgba(77, 216, 240, 0.6);
 }
 
 .btn-ghost {
   background: transparent;
-  color: var(--color-frost);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: var(--color-cream);
+  border: 1px solid rgba(245, 241, 227, 0.3);
   transition: border-color 0.2s ease, background 0.2s ease;
 }
 .btn-ghost:hover {
-  border-color: var(--color-ice);
-  background: rgba(189, 224, 248, 0.06);
+  border-color: var(--color-cyan);
+  background: rgba(77, 216, 240, 0.08);
 }
 
 /* Section eyebrow */
@@ -130,7 +204,7 @@ body {
   text-transform: uppercase;
   font-size: 0.7rem;
   font-weight: 600;
-  color: var(--color-ice);
+  color: var(--color-cyan);
 }
 
 @keyframes twinkle {

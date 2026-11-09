@@ -13,7 +13,7 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 pt-40 md:pt-48 pb-24 flex flex-col items-center text-center">
-        <p className="font-mono text-[11px] md:text-xs uppercase tracking-[0.4em] text-[#BDE0F8] mb-6">
+        <p className="font-mono text-[11px] md:text-xs uppercase tracking-[0.4em] text-[#4DD8F0] mb-6">
           Cxmmunity Media Presents
         </p>
 
@@ -28,7 +28,7 @@ export default function Hero() {
           />
         </h1>
 
-        <p className="font-display text-2xl md:text-4xl mt-10 max-w-3xl uppercase">
+        <p className="font-chunk cyan-glow text-2xl md:text-4xl mt-10 max-w-3xl uppercase">
           Gaming · Music · Creator Culture
         </p>
 
@@ -38,15 +38,15 @@ export default function Hero() {
         </p>
 
         {/* Next-event chip */}
-        <div className="mt-10 inline-flex flex-col sm:flex-row items-center gap-3 rounded-full border border-[#BDE0F8]/40 bg-ink/70 backdrop-blur-sm px-5 py-3">
-          <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-[#BDE0F8]">
+        <div className="mt-10 inline-flex flex-col sm:flex-row items-center gap-3 rounded-full border border-[#4DD8F0]/40 bg-ink/70 backdrop-blur-sm px-5 py-3">
+          <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-[#4DD8F0]">
             ● next stop
           </span>
           <span className="h-4 w-px bg-white/20 hidden sm:block" />
           <span className="font-display text-xl md:text-2xl tracking-wide">
             Atlanta · 12.11–12.13
           </span>
-          <span className="font-mono text-[10px] text-[#BDE0F8] uppercase tracking-[0.25em]">
+          <span className="font-mono text-[10px] text-[#4DD8F0] uppercase tracking-[0.25em]">
             ● on sale now
           </span>
         </div>

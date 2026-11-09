@@ -31,12 +31,12 @@ export default function TourPage() {
           <div className="absolute inset-0 z-[1] bg-gradient-to-b from-ink/40 via-ink/20 to-ink" />
           <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-10 w-full">
             <div className="flex items-center gap-3 mb-4 font-mono text-[10px] uppercase tracking-[0.3em]">
-              <span className="text-[#BDE0F8]">● REC</span>
+              <span className="text-[#4DD8F0]">● REC</span>
               <span className="text-frost/50">/</span>
               <span className="text-frost/70">2026 / 2027 tour</span>
             </div>
             <h1 className="font-display text-6xl md:text-8xl uppercase leading-[0.9]">
-              Where we&apos;re <span className="text-[#BDE0F8]">headed.</span>
+              Where we&apos;re <span className="text-[#4DD8F0]">headed.</span>
             </h1>
           </div>
         </section>

@@ -33,7 +33,7 @@ export default function PartnersPage() {
           <HeroVideo />
           <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 w-full">
             <p className="eyebrow mb-4">Partner With The Kickback</p>
-            <h1 className="font-display text-6xl md:text-8xl uppercase leading-[0.9]">
+            <h1 className="font-chunk cyan-glow text-6xl md:text-8xl uppercase leading-[0.9]">
               Partners.
             </h1>
             <p className="mt-6 max-w-2xl text-lg md:text-xl text-frost/80 leading-relaxed">
