@@ -224,8 +224,8 @@ const days: Day[] = [
       {
         time: "1:30 – 2:30 PM",
         timeMono: "1:30 PM",
-        title: "Creator All-Star Game",
-        note: "Your favorite creators pick sides and go to war on the main stage. Trash talk on, gloves off. No scripts, just gameplay. Compete in Tekken, Street Fighter, or NBA 2K.",
+        title: "Creator All-Star Game · $1,000 Prize",
+        note: "Your favorite creators pick sides and go to war on the main stage. $1,000 prize. Trash talk on, gloves off. No scripts, just gameplay. Compete in Tekken, Street Fighter, or NBA 2K.",
         kind: "creator",
         viewers: "12k",
         registerUrl: "https://form.typeform.com/to/bsQvy8Yj",
