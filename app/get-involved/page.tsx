@@ -49,7 +49,7 @@ const cards: Card[] = [
     photo: "/besttrickpicture.jpeg",
     cta: "Register to Compete →",
     href: "https://form.typeform.com/to/bsQvy8Yj",
-    accent: "hot",
+    accent: "ice",
   },
   {
     eyebrow: "Vendor Village",
@@ -59,7 +59,7 @@ const cards: Card[] = [
     photo: "/VendorMarketplace .JPG",
     cta: "Apply as a Vendor →",
     href: "#", // TODO: Form 3 Typeform URL
-    accent: "ice",
+    accent: "hot",
   },
   {
     eyebrow: "Media & Press · All 3 Days",
