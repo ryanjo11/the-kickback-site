@@ -66,7 +66,7 @@ const cards: Card[] = [
     title: "Covering The Kickback?",
     blurb:
       "Apply for a press pass. Access to all three nights for general event coverage. Reviewed in batches, confirmed by email.",
-    photo: "/past-events/cyw-kickback-411.jpg",
+    photo: "/mediapartner .jpg",
     cta: "Apply for Press →",
     href: "https://form.typeform.com/to/uHwhrECb",
     accent: "ice",
