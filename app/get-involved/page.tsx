@@ -34,7 +34,7 @@ const cards: Card[] = [
   },
   {
     eyebrow: "Creator All-Star Game · Sun 12/13",
-    title: "Compete in 2K, Tekken, or SF · $1,000 Prize",
+    title: "Compete in 2K, Tekken, or Street Fighter · $1,000 Prize",
     blurb:
       "Pick your game, pick your console, go to war on the main stage. $1,000 prize. Rosters finalized Dec 2. Expect an email from the team by Dec 4.",
     photo: "/creaatorallstargame.JPG",
