@@ -29,7 +29,7 @@ const cards: Card[] = [
       "Comped entry in exchange for a social post + collab with @cxmmunitymedia. Reviewed in batches. Applications close Dec 2.",
     photo: "/creatorrsvp.jpg",
     cta: "Apply as a Creator →",
-    href: "#", // TODO: Form 1 Typeform URL
+    href: "https://form.typeform.com/to/yuDC9omh",
     accent: "ice",
   },
   {
@@ -59,7 +59,7 @@ const cards: Card[] = [
       "Free table space on Sun Dec 13 at The Tabernacle · 11am to 11pm. Bring streetwear, sneakers, art, jewelry, or zines.",
     photo: "/VendorMarketplace .JPG",
     cta: "Apply as a Vendor →",
-    href: "#", // TODO: Form 3 Typeform URL
+    href: "https://form.typeform.com/to/fM9JP5RW",
     accent: "hot",
   },
   {
