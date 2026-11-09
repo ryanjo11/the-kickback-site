@@ -18,6 +18,7 @@ type Card = {
   cta: string;
   href: string;
   accent: "ice" | "hot";
+  objectPosition?: string;
 };
 
 const cards: Card[] = [
@@ -30,6 +31,7 @@ const cards: Card[] = [
     cta: "Apply as a Creator →",
     href: "#", // TODO: Form 1 Typeform URL
     accent: "ice",
+    objectPosition: "center 75%",
   },
   {
     eyebrow: "Creator All-Star Game · Sun 12/13",
@@ -125,6 +127,7 @@ export default function GetInvolvedPage() {
                         alt={c.title}
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        style={{ objectPosition: c.objectPosition ?? "center" }}
                         sizes="(min-width: 768px) 33vw, 100vw"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent" />
