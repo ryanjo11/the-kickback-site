@@ -31,7 +31,6 @@ const cards: Card[] = [
     cta: "Apply as a Creator →",
     href: "#", // TODO: Form 1 Typeform URL
     accent: "ice",
-    objectPosition: "center 75%",
   },
   {
     eyebrow: "Creator All-Star Game · Sun 12/13",
