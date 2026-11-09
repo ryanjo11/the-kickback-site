@@ -55,9 +55,9 @@ body {
   font-family: var(--font-script);
 }
 
-/* Bungee — chunky stencil display, used for hybrid-brand headlines */
+/* Archivo Black — modern geometric display, used for hybrid-brand headlines */
 .font-chunk {
-  font-family: var(--font-chunk), "Impact", "Arial Black", sans-serif;
+  font-family: var(--font-chunk), "Arial Black", "Helvetica Neue", sans-serif;
   letter-spacing: 0;
 }
 
@@ -127,14 +127,9 @@ body {
   );
 }
 
-/* Cyan outer glow for display text */
+/* .cyan-glow retained as a passthrough (effect removed per brand decision) */
 .cyan-glow {
   color: var(--color-cream);
-  text-shadow:
-    0 0 1px var(--color-cyan),
-    0 0 4px var(--color-cyan),
-    0 0 12px rgba(77, 216, 240, 0.4),
-    0 0 24px rgba(77, 216, 240, 0.2);
 }
 
 /* Marquee scroll */

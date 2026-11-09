@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Anton, Inter, Caveat_Brush, Bungee } from "next/font/google";
+import { Anton, Inter, Caveat_Brush, Archivo_Black } from "next/font/google";
 import "./globals.css";
 
 const anton = Anton({
@@ -19,7 +19,7 @@ const caveat = Caveat_Brush({
   subsets: ["latin"],
 });
 
-const bungee = Bungee({
+const chunk = Archivo_Black({
   weight: "400",
   variable: "--font-chunk",
   subsets: ["latin"],
@@ -53,7 +53,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${anton.variable} ${inter.variable} ${caveat.variable} ${bungee.variable} h-full antialiased`}
+      className={`${anton.variable} ${inter.variable} ${caveat.variable} ${chunk.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-ink text-frost font-body">{children}</body>
     </html>
