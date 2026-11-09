@@ -626,7 +626,7 @@ function TicketMatrix() {
                         ✓
                       </span>
                     ) : (
-                      <span className="font-mono text-sm text-frost/15">—</span>
+                      <span className="font-mono text-sm text-frost/15">·</span>
                     )}
                   </td>
                 );
@@ -707,7 +707,7 @@ export default function TicketsPage() {
             </h1>
             <p className="mt-6 max-w-xl text-frost/70 leading-relaxed">
               Three nights. Seven ways to pull up. Friday + Saturday are live
-              now — Sunday drops soon.
+              now. Sunday drops soon.
             </p>
           </div>
         </section>

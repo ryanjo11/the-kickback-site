@@ -59,7 +59,7 @@ const tentpoles: Tentpole[] = [
     num: "06",
     title: "DJ Sets",
     blurb:
-      "DJ sets running across all three nights — opening the weekend, closing the concert hall, powering the vibes in between.",
+      "DJ sets running across all three nights. Opening the weekend, closing the concert hall, powering the vibes in between.",
     photo: "/DJ Sets .JPG",
     accent: "hot",
     rotate: "-rotate-2",

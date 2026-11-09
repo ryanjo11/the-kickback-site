@@ -37,10 +37,6 @@ type ScheduleItem = {
   registerLabel?: string;
 };
 
-const tbaPanel: Speaker[] = [
-  { role: "moderator", name: "Speakers to be announced soon", title: "", company: "" },
-];
-
 type ParallelTrack = {
   code: string;
   label: string;
@@ -68,7 +64,6 @@ const days: Day[] = [
     day: "Fri",
     date: "Dec 11, 2026",
     venue: "LVRN Studios",
-    talent: "HOSTS · Bxn Trizzy + Drizzy  //  OFFICIAL DJ · DJ Kelli",
     items: [
       { time: "6:00 PM", timeMono: "6:00 PM", title: "Creator State of the Union", kind: "logistics" },
       {
@@ -83,7 +78,6 @@ const days: Day[] = [
         time: "7:00 – 7:30 PM",
         timeMono: "7:00 PM",
         title: "Panel · Where Worlds Collide",
-        note: "Confirmed speaker — more announcing soon.",
         kind: "panel",
         viewers: "1.2k",
         speakers: [
@@ -99,10 +93,8 @@ const days: Day[] = [
         time: "7:30 – 8:00 PM",
         timeMono: "7:30 PM",
         title: "Panel · The Creator Economy Is the Culture",
-        note: "Speakers to be announced soon.",
         kind: "panel",
         viewers: "1.8k",
-        speakers: tbaPanel,
       },
       {
         time: "8:00 – 8:30 PM",
@@ -114,10 +106,8 @@ const days: Day[] = [
         time: "8:30 – 9:00 PM",
         timeMono: "8:30 PM",
         title: "Panel · Made in Atlanta",
-        note: "Speakers to be announced soon.",
         kind: "panel",
         viewers: "2.4k",
-        speakers: tbaPanel,
       },
     ],
   },
@@ -127,6 +117,7 @@ const days: Day[] = [
     day: "Sat",
     date: "Dec 12, 2026",
     venue: "SkateATL",
+    talent: "HOSTS · Bxn Trizzy + Drizzy  //  OFFICIAL DJ · DJ Kelli",
     items: [
       {
         time: "6:00 PM",
@@ -158,6 +149,8 @@ const days: Day[] = [
         note: "Open-format best trick throwdown. Skaters go head-to-head for the $1K prize pool. Judges TBA.",
         kind: "tournament",
         viewers: "8.5k",
+        registerUrl: "https://form.typeform.com/to/bsQvy8Yj",
+        registerLabel: "Register to Compete →",
       },
       {
         time: "9:30 – 11:00 PM",
@@ -175,7 +168,7 @@ const days: Day[] = [
     day: "Sun",
     date: "Dec 13, 2026",
     venue: "The Tabernacle · Downtown Atlanta",
-    talent: "HOSTS · StoryMode Bae  //  DJ SETS BY · DJ Flowers + Cleotrvppv",
+    talent: "HOSTS · StoryMode Bae + Manni Supreme  //  DJ SETS BY · DJ Flowers + Cleotrvppv",
     allDay: [
       "Open Gaming Lounge + Tournaments",
       "Cosplay Meetups",
@@ -193,7 +186,6 @@ const days: Day[] = [
           time: "12:30 – 1:30 PM",
           timeMono: "12:30 PM",
           title: "Executive Workshop 1: Scaling Your Business as a Creator & Creative Entrepreneur",
-          note: "Confirmed speaker — additional panelists announcing soon.",
           kind: "panel",
           viewers: "invite",
           speakers: [
@@ -209,7 +201,6 @@ const days: Day[] = [
           time: "2:30 – 3:30 PM",
           timeMono: "2:30 PM",
           title: "Executive Workshop 2: Navigating Brand Deals & Partnerships",
-          note: "Host and panelists announcing soon.",
           kind: "panel",
           viewers: "invite",
         },
@@ -235,16 +226,14 @@ const days: Day[] = [
         time: "1:00 – 1:30 PM",
         timeMono: "1:00 PM",
         title: "Panel",
-        note: "Title, speakers, and moderator announcing soon.",
         kind: "panel",
         viewers: "6.1k",
-        speakers: tbaPanel,
       },
       {
         time: "1:30 – 2:30 PM",
         timeMono: "1:30 PM",
         title: "Creator All-Star Game",
-        note: "Your favorite creators pick sides and go to war on the main stage. Trash talk on, gloves off — no scripts, just gameplay. Compete in Tekken, Street Fighter, or NBA 2K.",
+        note: "Your favorite creators pick sides and go to war on the main stage. Trash talk on, gloves off. No scripts, just gameplay. Compete in Tekken, Street Fighter, or NBA 2K.",
         kind: "creator",
         viewers: "12k",
         registerUrl: "https://form.typeform.com/to/bsQvy8Yj",
@@ -262,7 +251,7 @@ const days: Day[] = [
         time: "4:30 – 5:00 PM",
         timeMono: "4:30 PM",
         title: "Cosplay Competition",
-        note: "The main stage becomes a runway. Cosplayers battle for the crown — judges, prizes, and full-crowd energy.",
+        note: "The main stage becomes a runway. Cosplayers battle for the crown. Judges, prizes, and full-crowd energy.",
         kind: "creator",
         viewers: "22k",
       },
@@ -278,7 +267,7 @@ const days: Day[] = [
         time: "6:00 PM",
         timeMono: "6:00 PM",
         title: "Doors Close",
-        note: "Daytime programming wraps. Head out, refuel, and get right — the concert experience is next.",
+        note: "Daytime programming wraps. Head out, refuel, and get right. The concert experience is next.",
         kind: "logistics",
       },
       {
@@ -629,6 +618,16 @@ export default function SchedulePage() {
           </div>
         </section>
 
+        {/* Hero sub-header — global announcement banner */}
+        <section className="pt-8 pb-4 border-t border-white/10">
+          <div className="max-w-4xl mx-auto px-6 md:px-10 text-center">
+            <div className="inline-flex items-center gap-3 font-mono text-[10px] md:text-xs uppercase tracking-[0.3em] text-ice">
+              <span className="w-1.5 h-1.5 bg-ice rounded-full animate-pulse" />
+              Speakers to be announced soon
+            </div>
+          </div>
+        </section>
+
         {/* Agenda feed — single column, sticky day headers */}
         <section className="py-16 md:py-24" id="waitlist-anchor">
           <div className="max-w-4xl mx-auto px-6 md:px-10">
@@ -839,17 +838,6 @@ export default function SchedulePage() {
                   </div>
                 );
               })}
-            </div>
-
-            <div className="mt-10 border-2 border-[#D9252A]/40 bg-[#D9252A]/[0.05] p-5 text-center">
-              <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-[#D9252A] mb-2 flex items-center justify-center gap-2">
-                <span className="w-1.5 h-1.5 bg-[#D9252A] rounded-full animate-pulse" />
-                incoming signal
-              </div>
-              <p className="font-mono text-xs text-frost/70 max-w-xl mx-auto leading-relaxed">
-                Panel titles, speakers, and the headline artist for the concert
-                experience are announcing soon. Follow to catch the drop live.
-              </p>
             </div>
 
             <div className="text-center mt-12 flex flex-col sm:flex-row justify-center gap-3">

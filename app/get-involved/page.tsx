@@ -7,7 +7,7 @@ import HeroVideo from "../components/HeroVideo";
 export const metadata = {
   title: "Get Involved · The Kickback Atlanta · Dec 11–13",
   description:
-    "Apply to pull up to The Kickback Atlanta. Creators, special guests, panelists, skaters for the Best Trick Comp, and vendors — three ways in. Applications close Dec 2, 2026.",
+    "Apply to pull up to The Kickback Atlanta. Creators, special guests, panelists, skaters for the Best Trick Comp, and vendors. Four ways in. Applications close Dec 2, 2026.",
 };
 
 type Card = {
@@ -25,8 +25,8 @@ const cards: Card[] = [
     eyebrow: "Creator · Special Guest · Panelist",
     title: "Pull up to the main stage",
     blurb:
-      "Comped entry in exchange for a social post + collab with @cxmmunitymedia. Reviewed in batches — applications close Dec 2.",
-    photo: "/past-events/cyw-kickback-411.jpg",
+      "Comped entry in exchange for a social post + collab with @cxmmunitymedia. Reviewed in batches. Applications close Dec 2.",
+    photo: "/creatorrsvp.jpg",
     cta: "Apply as a Creator →",
     href: "#", // TODO: Form 1 Typeform URL
     accent: "ice",
@@ -35,8 +35,8 @@ const cards: Card[] = [
     eyebrow: "Creator All-Star Game · Sun 12/13",
     title: "Compete in 2K, Tekken, or SF",
     blurb:
-      "Pick your game, pick your console, go to war on the main stage. Rosters finalized Dec 2 — email from the team by Dec 4.",
-    photo: "/past-events/cyw-kickback-293.jpg",
+      "Pick your game, pick your console, go to war on the main stage. Rosters finalized Dec 2. Expect an email from the team by Dec 4.",
+    photo: "/creaatorallstargame.JPG",
     cta: "Register to Play →",
     href: "https://form.typeform.com/to/bsQvy8Yj",
     accent: "hot",
@@ -45,18 +45,18 @@ const cards: Card[] = [
     eyebrow: "Skate · Best Trick Comp",
     title: "Compete for the $1K bag",
     blurb:
-      "Open to all ages and all skill levels. Sat Dec 12 at SkateATL. Register to lock your spot — waivers signed on-site.",
-    photo: "/past-events/cyw-kickback-293.jpg",
+      "Open to all ages and all skill levels. Sat Dec 12 at SkateATL. Register to lock your spot. Waivers signed on-site.",
+    photo: "/besttrickpicture.jpeg",
     cta: "Register to Compete →",
-    href: "#", // TODO: Form 2 Typeform URL
+    href: "https://form.typeform.com/to/bsQvy8Yj",
     accent: "hot",
   },
   {
     eyebrow: "Vendor Village",
     title: "Set up. Sell out.",
     blurb:
-      "Free table space on Sun Dec 13 at The Tabernacle · 11am–11pm. Streetwear, sneakers, art, jewelry, zines — pull up.",
-    photo: "/past-events/end5.jpg",
+      "Free table space on Sun Dec 13 at The Tabernacle · 11am to 11pm. Bring streetwear, sneakers, art, jewelry, or zines.",
+    photo: "/VendorMarketplace .JPG",
     cta: "Apply as a Vendor →",
     href: "#", // TODO: Form 3 Typeform URL
     accent: "ice",
@@ -80,10 +80,6 @@ export default function GetInvolvedPage() {
             <h1 className="font-chunk cyan-glow text-6xl md:text-8xl uppercase leading-[0.9]">
               Get <span className="text-ice">involved.</span>
             </h1>
-            <p className="mt-6 max-w-2xl text-lg md:text-xl text-frost/80 leading-relaxed">
-              Four ways to pull up to The Kickback Atlanta. Creators, gamers,
-              skaters, vendors — the rooms are being built right now.
-            </p>
           </div>
         </section>
 
@@ -158,7 +154,7 @@ export default function GetInvolvedPage() {
                 >
                   partner@cxmmunitymedia.co
                 </a>
-                . All applications reviewed in batches — don&rsquo;t worry if
+                . All applications reviewed in batches. Don&rsquo;t worry if
                 you don&rsquo;t hear back right away.
               </p>
             </div>

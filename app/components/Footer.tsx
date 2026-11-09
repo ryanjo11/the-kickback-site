@@ -14,6 +14,7 @@ const linksRows = [
       { label: "Atlanta", href: "/atlanta" },
       { label: "Schedule", href: "/schedule" },
       { label: "Tickets", href: "/tickets" },
+      { label: "Get Involved", href: "/get-involved" },
     ],
   },
   {

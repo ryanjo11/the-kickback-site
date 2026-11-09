@@ -37,7 +37,7 @@ export default function PartnersPage() {
               Partners.
             </h1>
             <p className="mt-6 max-w-2xl text-lg md:text-xl text-frost/80 leading-relaxed">
-              Gaming, music, and creator culture — in rooms where your brand
+              Gaming, music, and creator culture. Rooms where your brand
               gets lived in, not scrolled past.
             </p>
           </div>

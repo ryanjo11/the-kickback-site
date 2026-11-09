@@ -28,8 +28,8 @@ export default function Poster() {
             {/* Poster image */}
             <div className="relative aspect-[3/4] overflow-hidden border-2 border-red grain-heavy">
               <Image
-                src="/preview-poster.png.PNG"
-                alt="The Kickback · Weekend Events poster"
+                src="/Kickback Save The Date .PNG"
+                alt="The Kickback · Save The Date · Dec 11–13, Atlanta"
                 fill
                 className="object-cover"
                 sizes="(min-width: 768px) 640px, 100vw"

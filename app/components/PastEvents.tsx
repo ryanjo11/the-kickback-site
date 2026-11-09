@@ -80,7 +80,7 @@ function PhotoCard({ shot }: { shot: Shot }) {
     >
       <Image
         src={shot.src}
-        alt={`${shot.caption} — ${shot.location}`}
+        alt={`${shot.caption}, ${shot.location}`}
         fill
         className="object-cover"
         style={{ objectPosition: shot.objectPosition || "center" }}
