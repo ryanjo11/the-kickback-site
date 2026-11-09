@@ -80,14 +80,6 @@ const days: Day[] = [
         title: "Panel · Where Worlds Collide",
         kind: "panel",
         viewers: "1.2k",
-        speakers: [
-          {
-            role: "speaker",
-            name: "Brandon Butler",
-            title: "Founder & CEO",
-            company: "ButlerATL & 404 Day",
-          },
-        ],
       },
       {
         time: "7:30 – 8:00 PM",
@@ -250,10 +242,12 @@ const days: Day[] = [
       {
         time: "4:30 – 5:00 PM",
         timeMono: "4:30 PM",
-        title: "Cosplay Competition",
-        note: "The main stage becomes a runway. Cosplayers battle for the crown. Judges, prizes, and full-crowd energy.",
+        title: "Cosplay Competition · $1,000 Prize",
+        note: "The main stage becomes a runway. Cosplayers battle for the crown. One winner, $1,000 prize. Open to all ages.",
         kind: "creator",
         viewers: "22k",
+        registerUrl: "https://form.typeform.com/to/HOSuNGPJ",
+        registerLabel: "Register to Cosplay →",
       },
       {
         time: "5:15 – 5:45 PM",

@@ -71,6 +71,16 @@ const cards: Card[] = [
     href: "https://form.typeform.com/to/uHwhrECb",
     accent: "ice",
   },
+  {
+    eyebrow: "Cosplay Competition · Sun 12/13",
+    title: "Hit the stage. Take home $1K.",
+    blurb:
+      "One winner, $1,000 prize. Open to all ages. Solo and groups welcome. Free to enter. 60-90 second stage walk at The Tabernacle.",
+    photo: "/CosplayCompetition.JPG",
+    cta: "Register to Cosplay →",
+    href: "https://form.typeform.com/to/HOSuNGPJ",
+    accent: "hot",
+  },
 ];
 
 export default function GetInvolvedPage() {
@@ -93,28 +103,20 @@ export default function GetInvolvedPage() {
           </div>
         </section>
 
-        {/* 5 cards — 3 on top row, 2 on bottom row centered (desktop) */}
+        {/* 6 cards — 3 on top row, 3 on bottom row (desktop) */}
         <section className="py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-6 md:px-10">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-5 md:gap-6">
-              {cards.map((c, i) => {
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+              {cards.map((c) => {
                 const hex = c.accent === "hot" ? "#D9252A" : "#4DD8F0";
                 const isExternal = c.href.startsWith("http");
-                // Desktop (lg): first 3 cards each span 2 of 6 cols (full top row)
-                // 4th card starts at col 2 (span 2), 5th at col 4 (span 2) = centered bottom row
-                const lgSpan =
-                  i < 3
-                    ? "lg:col-span-2"
-                    : i === 3
-                    ? "lg:col-span-2 lg:col-start-2"
-                    : "lg:col-span-2 lg:col-start-4";
                 return (
                   <Link
                     key={c.title}
                     href={c.href}
                     target={isExternal ? "_blank" : undefined}
                     rel={isExternal ? "noopener noreferrer" : undefined}
-                    className={`${lgSpan} group relative border-2 border-white/10 hover:border-white/40 bg-ink overflow-hidden flex flex-col transition-colors`}
+                    className="group relative border-2 border-white/10 hover:border-white/40 bg-ink overflow-hidden flex flex-col transition-colors"
                   >
                     {/* Photo */}
                     <div className="relative aspect-[4/3] overflow-hidden">
