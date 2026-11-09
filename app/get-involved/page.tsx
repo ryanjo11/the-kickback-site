@@ -24,7 +24,7 @@ type Card = {
 const cards: Card[] = [
   {
     eyebrow: "Creator · Special Guest · Panelist",
-    title: "Pull up to the main stage",
+    title: "Creator and Panelist Application",
     blurb:
       "Comped entry in exchange for a social post + collab with @cxmmunitymedia. Reviewed in batches. Applications close Dec 2.",
     photo: "/creatorrsvp.jpg",
@@ -44,7 +44,7 @@ const cards: Card[] = [
   },
   {
     eyebrow: "Skate · Best Trick Comp",
-    title: "Compete for the $1K bag",
+    title: "Compete for the $1K",
     blurb:
       "Open to all ages and all skill levels. Sat Dec 12 at SkateATL. Register to lock your spot. Waivers signed on-site.",
     photo: "/besttrickpicture.jpeg",
@@ -54,9 +54,9 @@ const cards: Card[] = [
   },
   {
     eyebrow: "Vendor Village",
-    title: "Set up. Sell out.",
+    title: "Vendor Village Application",
     blurb:
-      "Free table space on Sun Dec 13 at The Tabernacle · 11am to 11pm. Bring streetwear, sneakers, art, jewelry, or zines.",
+      "Free table space on Sun Dec 13 at The Tabernacle · 11am to 11pm. Bring streetwear, sneakers, art, or gaming studios.",
     photo: "/VendorMarketplace .JPG",
     cta: "Apply as a Vendor →",
     href: "https://form.typeform.com/to/fM9JP5RW",
@@ -64,7 +64,7 @@ const cards: Card[] = [
   },
   {
     eyebrow: "Media & Press · All 3 Days",
-    title: "Covering The Kickback?",
+    title: "Want to Cover The Kickback?",
     blurb:
       "Apply for a press pass. Access to all three nights for general event coverage. Reviewed in batches, confirmed by email.",
     photo: "/mediapartner .jpg",

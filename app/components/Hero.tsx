@@ -13,7 +13,7 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 pt-40 md:pt-48 pb-24 flex flex-col items-center text-center">
-        <p className="font-mono text-[11px] md:text-xs uppercase tracking-[0.4em] text-[#4DD8F0] mb-6">
+        <p className="font-mono text-[11px] md:text-xs uppercase tracking-[0.4em] text-white mb-6">
           Cxmmunity Media Presents
         </p>
 
