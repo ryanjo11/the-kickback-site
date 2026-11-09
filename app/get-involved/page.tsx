@@ -61,6 +61,16 @@ const cards: Card[] = [
     href: "#", // TODO: Form 3 Typeform URL
     accent: "ice",
   },
+  {
+    eyebrow: "Media & Press · All 3 Days",
+    title: "Covering The Kickback?",
+    blurb:
+      "Apply for a press pass. Access to all three nights for general event coverage. Reviewed in batches, confirmed by email.",
+    photo: "/past-events/cyw-kickback-411.jpg",
+    cta: "Apply for Press →",
+    href: "https://form.typeform.com/to/uHwhrECb",
+    accent: "ice",
+  },
 ];
 
 export default function GetInvolvedPage() {
@@ -83,20 +93,28 @@ export default function GetInvolvedPage() {
           </div>
         </section>
 
-        {/* 4 cards */}
+        {/* 5 cards — 3 on top row, 2 on bottom row centered (desktop) */}
         <section className="py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-6 md:px-10">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
-              {cards.map((c) => {
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-5 md:gap-6">
+              {cards.map((c, i) => {
                 const hex = c.accent === "hot" ? "#D9252A" : "#4DD8F0";
                 const isExternal = c.href.startsWith("http");
+                // Desktop (lg): first 3 cards each span 2 of 6 cols (full top row)
+                // 4th card starts at col 2 (span 2), 5th at col 4 (span 2) = centered bottom row
+                const lgSpan =
+                  i < 3
+                    ? "lg:col-span-2"
+                    : i === 3
+                    ? "lg:col-span-2 lg:col-start-2"
+                    : "lg:col-span-2 lg:col-start-4";
                 return (
                   <Link
                     key={c.title}
                     href={c.href}
                     target={isExternal ? "_blank" : undefined}
                     rel={isExternal ? "noopener noreferrer" : undefined}
-                    className="group relative border-2 border-white/10 hover:border-white/40 bg-ink overflow-hidden flex flex-col transition-colors"
+                    className={`${lgSpan} group relative border-2 border-white/10 hover:border-white/40 bg-ink overflow-hidden flex flex-col transition-colors`}
                   >
                     {/* Photo */}
                     <div className="relative aspect-[4/3] overflow-hidden">
