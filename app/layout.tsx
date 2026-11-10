@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Anton, Inter, Caveat_Brush, Archivo_Black } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
+import AnalyticsEvents from "./components/AnalyticsEvents";
 import "./globals.css";
 
 const anton = Anton({
@@ -55,7 +57,11 @@ export default function RootLayout({
       lang="en"
       className={`${anton.variable} ${inter.variable} ${caveat.variable} ${chunk.variable} h-full antialiased`}
     >
-      <body className="min-h-full bg-ink text-frost font-body">{children}</body>
+      <body className="min-h-full bg-ink text-frost font-body">
+        {children}
+        <AnalyticsEvents />
+      </body>
+      <GoogleAnalytics gaId="G-K875KZSM0C" />
     </html>
   );
 }
