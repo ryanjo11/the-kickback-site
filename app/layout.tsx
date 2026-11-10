@@ -30,20 +30,30 @@ const chunk = Archivo_Black({
 export const metadata: Metadata = {
   title: "The Kickback · Gaming · Music · Creator Culture",
   description:
-    "A multi-city tour mashing the culture of gaming, music, and creator culture. For the ones who can't be put in a box. Next stop: Atlanta, Dec 12–13.",
-  metadataBase: new URL("https://thekickback.gg"),
+    "A multi-city tour mashing the culture of gaming, music, and creator culture. For the ones who can't be put in a box. Next stop: Atlanta, Dec 11-13.",
+  metadataBase: new URL("https://thekickbackatl.com"),
   openGraph: {
-    title: "The Kickback · Gaming · Music · Creator Culture",
+    title: "The Kickback · ATL · Dec 11-13",
     description:
-      "A multi-city tour mashing the culture of gaming, music, and creator culture. Next stop: Atlanta, Dec 12–13.",
+      "Gaming, music, and creator culture across 3 nights in Atlanta. LVRN Studios, SkateATL, and The Tabernacle. Tickets on sale now.",
     type: "website",
     siteName: "The Kickback",
+    url: "https://thekickbackatl.com",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "The Kickback · Atlanta · Dec 11-13",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "The Kickback",
+    title: "The Kickback · ATL · Dec 11-13",
     description:
-      "Gaming · Music · Creator Culture. Next stop: Atlanta, Dec 12–13.",
+      "Gaming, music, and creator culture across 3 nights in Atlanta. Tickets on sale now.",
+    images: ["/og-image.png"],
   },
 };
 
