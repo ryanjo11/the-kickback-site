@@ -617,7 +617,7 @@ export default function SchedulePage() {
           <div className="max-w-4xl mx-auto px-6 md:px-10 text-center">
             <div className="inline-flex items-center gap-3 font-mono text-[10px] md:text-xs uppercase tracking-[0.3em] text-ice">
               <span className="w-1.5 h-1.5 bg-ice rounded-full animate-pulse" />
-              Speakers to be announced soon
+              Speakers + headlining artist to be announced soon
             </div>
           </div>
         </section>
