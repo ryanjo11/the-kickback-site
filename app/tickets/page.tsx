@@ -696,6 +696,38 @@ export default function TicketsPage() {
             <TicketMatrixMobile />
             <TicketMatrix />
 
+            {/* Past concert performers — social proof for ticket buyers */}
+            <div className="mt-12 md:mt-16 paper-red-shadow bg-cream text-ink p-6 md:p-8">
+              <div className="flex flex-col md:flex-row md:items-start gap-6 md:gap-8">
+                <div className="relative w-full md:w-48 aspect-[4/5] md:aspect-[3/4] overflow-hidden shrink-0 border-2 border-ink/80 grain-heavy">
+                  <Image
+                    src="/past-events/gherbo.jpg"
+                    alt="G Herbo performing at a past Kickback"
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 768px) 192px, 100vw"
+                  />
+                </div>
+                <div className="flex-1">
+                  <div
+                    className="font-mono text-[10px] uppercase tracking-[0.3em] mb-3 font-bold"
+                    style={{ color: "#D9252A" }}
+                  >
+                    ● Past Kickback Concert Performers
+                  </div>
+                  <div className="font-chunk text-2xl md:text-4xl uppercase leading-[1.05] text-ink">
+                    Pusha T · JID · Baby Tate
+                    <br />
+                    G Herbo · NLE Choppa · Kenny Mason
+                  </div>
+                  <p className="mt-4 text-sm md:text-base text-ink/70 leading-relaxed max-w-xl">
+                    A snapshot of who&rsquo;s taken the Kickback stage before. The
+                    Sunday Dec 13 headlining artist is announcing soon.
+                  </p>
+                </div>
+              </div>
+            </div>
+
             {/* CTA row */}
             <div className="text-center mt-12 flex flex-col sm:flex-row gap-3 justify-center">
               <Link
