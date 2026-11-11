@@ -394,6 +394,7 @@ const matrixTiers: MatrixTier[] = [
     code: "T-03", day: "SUN", dayDate: "12.13", name: "Daytime", price: "$15",
     window: "11a–6p", accent: "ice",
     features: { daytime: true, gamingLounge: true, headshots: true, vendors: true },
+    ticketUrl: "https://www.universe.com/events/the-kickback-tickets-PC17LZ",
   },
   {
     code: "T-04", day: "SUN", dayDate: "12.13", name: "Concert · GA", price: "$30",
