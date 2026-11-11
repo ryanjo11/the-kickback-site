@@ -131,32 +131,6 @@ const days: Day[] = [
         ],
         accent: "hot",
       },
-      {
-        code: "T-06",
-        name: "Full Experience",
-        price: "$37",
-        window: "11:00 AM – 11:00 PM",
-        includes: [
-          "All daytime programming",
-          "Concert · GA",
-          "Save $8 vs. buying separate",
-        ],
-        accent: "royal",
-        best: true,
-      },
-      {
-        code: "T-07",
-        name: "Full & Concert VIP",
-        price: "$45",
-        window: "11:00 AM – 11:00 PM",
-        includes: [
-          "All daytime programming",
-          "Concert · VIP access",
-          "Elevated viewing area",
-          "Best value for the whole day",
-        ],
-        accent: "royal",
-      },
     ],
   },
 ];
@@ -405,16 +379,6 @@ const matrixTiers: MatrixTier[] = [
     code: "T-05", day: "SUN", dayDate: "12.13", name: "Concert · VIP", price: "$40",
     window: "7p–11p", accent: "hot",
     features: { gamingLounge: true, headshots: true, vendors: true, concertVIP: true },
-  },
-  {
-    code: "T-06", day: "SUN", dayDate: "12.13", name: "Full Experience", price: "$37",
-    window: "11a–11p", accent: "royal", best: true,
-    features: { daytime: true, gamingLounge: true, headshots: true, vendors: true, concertGA: true },
-  },
-  {
-    code: "T-07", day: "SUN", dayDate: "12.13", name: "Full & Concert VIP", price: "$45",
-    window: "11a–11p", accent: "hot",
-    features: { daytime: true, gamingLounge: true, headshots: true, vendors: true, concertVIP: true },
   },
 ];
 
@@ -726,32 +690,11 @@ export default function TicketsPage() {
               <span className="w-1.5 h-1.5 bg-ice rounded-full animate-pulse" />
               <span className="text-ice">compare all tiers</span>
               <span className="text-frost/40">·</span>
-              <span className="text-frost/60">7 ways in · 3 nights</span>
+              <span className="text-frost/60">5 ways in · 3 nights</span>
             </div>
 
             <TicketMatrixMobile />
             <TicketMatrix />
-
-            {/* Value note */}
-            <div className="mt-10 border border-ice/30 bg-ice/[0.03] p-5">
-              <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-ice mb-2">
-                ● how it stacks
-              </div>
-              <ul className="font-mono text-xs text-frost/70 space-y-1 leading-relaxed">
-                <li>
-                  <span className="text-ice">▸</span> Daytime + Concert GA
-                  bought separately: <span className="text-frost/50">$45</span>{" "}
-                  → Full Experience is{" "}
-                  <span className="text-ice">$37 · save $8</span>
-                </li>
-                <li>
-                  <span className="text-ice">▸</span> Daytime + Concert VIP
-                  bought separately: <span className="text-frost/50">$55</span>{" "}
-                  → Full & Concert VIP is{" "}
-                  <span className="text-ice">$45 · save $10</span>
-                </li>
-              </ul>
-            </div>
 
             {/* CTA row */}
             <div className="text-center mt-12 flex flex-col sm:flex-row gap-3 justify-center">
