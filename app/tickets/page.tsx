@@ -42,7 +42,7 @@ const days: Day[] = [
     tiers: [
       {
         code: "T-01",
-        name: "Opening Night · LVRN Studios",
+        name: "Creator State of the Union",
         price: "$10",
         window: "6:00 PM – 11:00 PM",
         includes: [
@@ -66,7 +66,7 @@ const days: Day[] = [
     tiers: [
       {
         code: "T-02",
-        name: "Skate Park Session",
+        name: "The Kickback Skate Jam",
         price: "FREE",
         window: "6:00 PM – 11:00 PM",
         includes: [
@@ -90,7 +90,7 @@ const days: Day[] = [
     tiers: [
       {
         code: "T-03",
-        name: "Daytime Only",
+        name: "The Kickback Daytime Programming",
         price: "$15",
         window: "11:00 AM – 6:00 PM",
         includes: [
@@ -104,7 +104,7 @@ const days: Day[] = [
       },
       {
         code: "T-04",
-        name: "Concert · GA",
+        name: "The Kickback Concert · GA",
         price: "$30",
         window: "7:00 PM – 11:00 PM",
         includes: [
@@ -118,7 +118,7 @@ const days: Day[] = [
       },
       {
         code: "T-05",
-        name: "Concert · VIP",
+        name: "The Kickback Concert · VIP",
         price: "$40",
         window: "7:00 PM – 11:00 PM",
         includes: [
@@ -353,30 +353,30 @@ type MatrixTier = {
 
 const matrixTiers: MatrixTier[] = [
   {
-    code: "T-01", day: "FRI", dayDate: "12.11", name: "Opening Night", price: "$10",
+    code: "T-01", day: "FRI", dayDate: "12.11", name: "Creator State of the Union", price: "$10",
     window: "6p–11p", accent: "ice",
     features: { lvrn: true },
     ticketUrl: "https://posh.vip/e/the-kickback-creator-state-of-the-union",
   },
   {
-    code: "T-02", day: "SAT", dayDate: "12.12", name: "Skate Park", price: "Free with RSVP",
+    code: "T-02", day: "SAT", dayDate: "12.12", name: "The Kickback Skate Jam", price: "Free with RSVP",
     window: "6p–11p", accent: "royal",
     features: { skate: true },
     ticketUrl: "https://posh.vip/e/the-kickback-skate-jam",
   },
   {
-    code: "T-03", day: "SUN", dayDate: "12.13", name: "Daytime", price: "Free with RSVP",
+    code: "T-03", day: "SUN", dayDate: "12.13", name: "The Kickback Daytime Programming", price: "Free with RSVP",
     window: "11a–6p", accent: "ice",
     features: { daytime: true, gamingLounge: true, headshots: true, vendors: true },
     ticketUrl: "https://www.universe.com/events/the-kickback-tickets-PC17LZ",
   },
   {
-    code: "T-04", day: "SUN", dayDate: "12.13", name: "Concert · GA", price: "$30",
+    code: "T-04", day: "SUN", dayDate: "12.13", name: "The Kickback Concert · GA", price: "$30",
     window: "7p–11p", accent: "hot",
     features: { gamingLounge: true, headshots: true, vendors: true, concertGA: true },
   },
   {
-    code: "T-05", day: "SUN", dayDate: "12.13", name: "Concert · VIP", price: "$40",
+    code: "T-05", day: "SUN", dayDate: "12.13", name: "The Kickback Concert · VIP", price: "$40",
     window: "7p–11p", accent: "hot",
     features: { gamingLounge: true, headshots: true, vendors: true, concertVIP: true },
   },
