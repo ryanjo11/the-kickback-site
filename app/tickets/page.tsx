@@ -327,7 +327,7 @@ function DayPanel({ d, wide = false }: { d: Day; wide?: boolean }) {
                     className="inline-flex items-center justify-center w-full md:w-auto px-6 py-3 font-mono text-[11px] uppercase tracking-[0.3em] font-bold text-ink transition-opacity hover:opacity-90"
                     style={{ background: a.hex }}
                   >
-                    {t.price === "FREE" ? "RSVP Now" : "Buy Tickets"} →
+                    {t.price.includes("Free") ? "RSVP" : "Buy Tickets"} →
                   </a>
                 </div>
               )}
@@ -385,13 +385,13 @@ const matrixTiers: MatrixTier[] = [
     ticketUrl: "https://posh.vip/e/the-kickback-creator-state-of-the-union",
   },
   {
-    code: "T-02", day: "SAT", dayDate: "12.12", name: "Skate Park", price: "FREE",
+    code: "T-02", day: "SAT", dayDate: "12.12", name: "Skate Park", price: "Free with RSVP",
     window: "6p–11p", accent: "royal",
     features: { skate: true },
     ticketUrl: "https://posh.vip/e/the-kickback-skate-jam",
   },
   {
-    code: "T-03", day: "SUN", dayDate: "12.13", name: "Daytime", price: "$15",
+    code: "T-03", day: "SUN", dayDate: "12.13", name: "Daytime", price: "Free with RSVP",
     window: "11a–6p", accent: "ice",
     features: { daytime: true, gamingLounge: true, headshots: true, vendors: true },
     ticketUrl: "https://www.universe.com/events/the-kickback-tickets-PC17LZ",
@@ -469,7 +469,9 @@ function TicketMatrixMobile() {
                 </div>
               </div>
               <div
-                className="font-chunk text-3xl leading-none shrink-0"
+                className={`font-chunk leading-[1.05] shrink-0 text-right ${
+                  t.price.includes("Free") ? "text-lg max-w-[7.5rem]" : "text-3xl"
+                }`}
                 style={{ color }}
               >
                 {t.price}
@@ -516,9 +518,9 @@ function TicketMatrixMobile() {
                   className="inline-flex items-center justify-center w-full px-4 py-3 font-mono text-[11px] uppercase tracking-[0.3em] font-bold text-cream"
                   style={{ background: color }}
                 >
-                  {t.price === "FREE" ? "RSVP Now" : "Buy Tickets"} →
+                  {t.price.includes("Free") ? "RSVP" : "Buy Tickets"} →
                 </a>
-              ) : t.price === "FREE" ? (
+              ) : t.price.includes("Free") ? (
                 <span
                   className="font-mono text-[9px] uppercase tracking-widest font-bold"
                   style={{ color }}
@@ -581,7 +583,11 @@ function TicketMatrix() {
                   </div>
                   {/* Price */}
                   <div
-                    className="font-display text-3xl md:text-4xl leading-none mt-2"
+                    className={`font-display leading-[1.05] mt-2 ${
+                      t.price.includes("Free")
+                        ? "text-sm md:text-base"
+                        : "text-3xl md:text-4xl"
+                    }`}
                     style={{ color, letterSpacing: "-0.02em" }}
                   >
                     {t.price}
@@ -658,9 +664,9 @@ function TicketMatrix() {
                       className="inline-flex items-center justify-center px-3 py-2 font-mono text-[9px] uppercase tracking-[0.25em] font-bold text-ink whitespace-nowrap"
                       style={{ background: color }}
                     >
-                      {t.price === "FREE" ? "RSVP" : "Buy"} →
+                      {t.price.includes("Free") ? "RSVP" : "Buy"} →
                     </a>
-                  ) : t.price === "FREE" ? (
+                  ) : t.price.includes("Free") ? (
                     <span className="font-mono text-[9px] uppercase tracking-widest text-ice">
                       ● RSVP SOON
                     </span>
