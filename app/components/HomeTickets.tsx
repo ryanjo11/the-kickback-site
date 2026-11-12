@@ -93,7 +93,7 @@ export default function HomeTickets() {
               ● tickets · on sale · fri + sat live
             </div>
             <h2 className="font-chunk cyan-glow text-5xl md:text-6xl leading-[0.95] uppercase">
-              Pull up to <span className="text-cyan">the weekend.</span>
+              Pull up to <span className="text-cyan">the kickback.</span>
             </h2>
           </div>
           <Link
