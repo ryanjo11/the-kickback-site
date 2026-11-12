@@ -80,12 +80,6 @@ export default function AtlantaPage() {
               >
                 Apply to Pull Up →
               </Link>
-              <Link
-                href="#waitlist"
-                className="btn-ghost inline-flex items-center justify-center px-8 py-4 rounded-full text-base font-semibold uppercase tracking-wide"
-              >
-                Get on the List
-              </Link>
             </div>
           </div>
         </section>
@@ -123,7 +117,7 @@ export default function AtlantaPage() {
             </div>
 
             {/* LVRN info */}
-            <div className="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
               <div className="rounded-2xl border border-white/10 bg-ink-soft p-5">
                 <div className="eyebrow mb-2">Address</div>
                 <div className="font-display text-xl uppercase">
@@ -140,13 +134,6 @@ export default function AtlantaPage() {
                 </div>
                 <div className="text-sm text-frost/65 mt-1">
                   Panels · fireside · open networking
-                </div>
-              </div>
-              <div className="rounded-2xl border border-white/10 bg-ink-soft p-5">
-                <div className="eyebrow mb-2">Capacity</div>
-                <div className="font-display text-xl uppercase">250</div>
-                <div className="text-sm text-frost/65 mt-1">
-                  Intimate studio session
                 </div>
               </div>
             </div>
@@ -186,7 +173,7 @@ export default function AtlantaPage() {
             </div>
 
             {/* SkateATL info */}
-            <div className="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
               <div className="rounded-2xl border border-white/10 bg-ink-soft p-5">
                 <div className="eyebrow mb-2">Address</div>
                 <div className="font-display text-xl uppercase">
@@ -203,13 +190,6 @@ export default function AtlantaPage() {
                 </div>
                 <div className="text-sm text-frost/65 mt-1">
                   DJ sets all night · Free · RSVP
-                </div>
-              </div>
-              <div className="rounded-2xl border border-white/10 bg-ink-soft p-5">
-                <div className="eyebrow mb-2">Capacity</div>
-                <div className="font-display text-xl uppercase">250</div>
-                <div className="text-sm text-frost/65 mt-1">
-                  Intimate open-air session
                 </div>
               </div>
             </div>
@@ -256,7 +236,7 @@ export default function AtlantaPage() {
               ))}
             </div>
 
-            <div className="grid md:grid-cols-3 gap-4">
+            <div className="grid md:grid-cols-2 gap-4">
               <div className="rounded-2xl border border-white/10 bg-ink-soft p-5">
                 <div className="eyebrow mb-2">Address</div>
                 <div className="font-display text-xl uppercase">
@@ -273,13 +253,6 @@ export default function AtlantaPage() {
                 </div>
                 <div className="text-sm text-frost/65 mt-1">
                   Doors 11am · concert 7pm – 11:30pm
-                </div>
-              </div>
-              <div className="rounded-2xl border border-white/10 bg-ink-soft p-5">
-                <div className="eyebrow mb-2">Capacity</div>
-                <div className="font-display text-xl uppercase">2,200</div>
-                <div className="text-sm text-frost/65 mt-1">
-                  Floor + multi-tier balcony
                 </div>
               </div>
             </div>

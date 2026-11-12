@@ -30,7 +30,7 @@ export default function Community() {
         <div className="rounded-3xl border border-white/10 bg-ink/60 backdrop-blur-sm p-8 md:p-10">
           <p className="eyebrow mb-3">The Newsletter</p>
           <h3 className="font-display text-4xl md:text-5xl uppercase leading-[0.95]">
-            Get on the <span className="text-ice">list.</span>
+            Join the <span className="text-ice">Cxmmunity.</span>
           </h3>
           <p className="mt-4 text-frost/75 leading-relaxed">
             Tour drops, ticket presales, creator opportunities, and behind-the-scenes
