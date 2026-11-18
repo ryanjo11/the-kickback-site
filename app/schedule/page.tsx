@@ -228,7 +228,7 @@ const days: Day[] = [
         note: "Your favorite creators pick sides and go to war on the main stage. $1,000 prize. Trash talk on, gloves off. No scripts, just gameplay. Compete in Tekken, Street Fighter, or NBA 2K.",
         kind: "creator",
         viewers: "12k",
-        registerUrl: "https://form.typeform.com/to/bsQvy8Yj",
+        registerUrl: "https://form.typeform.com/to/yUsbOQTR",
         registerLabel: "Register to Play →",
       },
       {

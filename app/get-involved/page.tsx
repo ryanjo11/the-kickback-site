@@ -39,7 +39,7 @@ const cards: Card[] = [
       "Pick your game, pick your console, go to war on the main stage. $1,000 prize. Rosters finalized Dec 2. Expect an email from the team by Dec 4.",
     photo: "/creaatorallstargame.JPG",
     cta: "Register to Play →",
-    href: "https://form.typeform.com/to/bsQvy8Yj",
+    href: "https://form.typeform.com/to/yUsbOQTR",
     accent: "hot",
   },
   {
