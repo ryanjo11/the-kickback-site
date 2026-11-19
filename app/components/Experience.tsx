@@ -75,7 +75,7 @@ const tentpoles: Tentpole[] = [
   },
   {
     num: "08",
-    title: "Bae Brigade",
+    title: "Bae Brigade Battle",
     blurb:
       "A Sunday mainstage moment inside The Tabernacle. Details announcing soon.",
     photo: "/BaeBrigade.jpeg",
