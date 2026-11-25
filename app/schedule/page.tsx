@@ -561,37 +561,35 @@ function DayStream({
                       {item.note}
                     </div>
                   )}
-                  {(item.details || (item.speakers && item.speakers.length > 0)) && (
+                  {item.speakers && item.speakers.length > 0 && (
+                    <div className="mt-2 flex flex-wrap gap-2">
+                      {item.speakers.map((s, si) => (
+                        <div
+                          key={si}
+                          className="border border-white/10 bg-ink/40 px-2.5 py-1.5 text-[10px] font-mono leading-tight"
+                        >
+                          <div className="font-display text-[11px] uppercase text-frost">
+                            {s.name}
+                          </div>
+                          {s.title && (
+                            <div className="text-frost/60">{s.title}</div>
+                          )}
+                          {s.company && (
+                            <div className="text-frost/50">{s.company}</div>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  {item.details && (
                     <details className="group mt-2">
                       <summary className="cursor-pointer list-none font-mono text-[9px] uppercase tracking-[0.25em] text-[#4DD8F0] hover:text-frost transition-colors inline-flex items-center gap-1">
-                        <span className="group-open:hidden">▸ details + speakers</span>
-                        <span className="hidden group-open:inline">▾ hide</span>
+                        <span className="group-open:hidden">▸ full description</span>
+                        <span className="hidden group-open:inline">▾ hide description</span>
                       </summary>
-                      {item.details && (
-                        <p className="mt-2 text-[11px] text-frost/70 font-mono leading-relaxed">
-                          {item.details}
-                        </p>
-                      )}
-                      {item.speakers && item.speakers.length > 0 && (
-                        <div className="mt-3 flex flex-wrap gap-2">
-                          {item.speakers.map((s, si) => (
-                            <div
-                              key={si}
-                              className="border border-white/10 bg-ink/40 px-2.5 py-1.5 text-[10px] font-mono leading-tight"
-                            >
-                              <div className="font-display text-[11px] uppercase text-frost">
-                                {s.name}
-                              </div>
-                              {s.title && (
-                                <div className="text-frost/60">{s.title}</div>
-                              )}
-                              {s.company && (
-                                <div className="text-frost/50">{s.company}</div>
-                              )}
-                            </div>
-                          ))}
-                        </div>
-                      )}
+                      <p className="mt-2 text-[11px] text-frost/70 font-mono leading-relaxed">
+                        {item.details}
+                      </p>
                     </details>
                   )}
                 </div>
@@ -877,37 +875,35 @@ export default function SchedulePage() {
                                     {item.note}
                                   </div>
                                 )}
-                                {(item.details || (item.speakers && item.speakers.length > 0)) && (
+                                {item.speakers && item.speakers.length > 0 && (
+                                  <div className="mt-2 flex flex-wrap gap-2">
+                                    {item.speakers.map((s, si) => (
+                                      <div
+                                        key={si}
+                                        className="border border-white/10 bg-ink/40 px-2.5 py-1.5 text-[10px] font-mono leading-tight"
+                                      >
+                                        <div className="font-display text-[11px] uppercase text-frost">
+                                          {s.name}
+                                        </div>
+                                        {s.title && (
+                                          <div className="text-frost/60">{s.title}</div>
+                                        )}
+                                        {s.company && (
+                                          <div className="text-frost/50">{s.company}</div>
+                                        )}
+                                      </div>
+                                    ))}
+                                  </div>
+                                )}
+                                {item.details && (
                                   <details className="group mt-2">
                                     <summary className="cursor-pointer list-none font-mono text-[9px] uppercase tracking-[0.25em] text-[#4DD8F0] hover:text-frost transition-colors inline-flex items-center gap-1">
-                                      <span className="group-open:hidden">▸ details + speakers</span>
-                                      <span className="hidden group-open:inline">▾ hide</span>
+                                      <span className="group-open:hidden">▸ full description</span>
+                                      <span className="hidden group-open:inline">▾ hide description</span>
                                     </summary>
-                                    {item.details && (
-                                      <p className="mt-2 text-[11px] text-frost/70 font-mono leading-relaxed">
-                                        {item.details}
-                                      </p>
-                                    )}
-                                    {item.speakers && item.speakers.length > 0 && (
-                                      <div className="mt-3 flex flex-wrap gap-2">
-                                        {item.speakers.map((s, si) => (
-                                          <div
-                                            key={si}
-                                            className="border border-white/10 bg-ink/40 px-2.5 py-1.5 text-[10px] font-mono leading-tight"
-                                          >
-                                            <div className="font-display text-[11px] uppercase text-frost">
-                                              {s.name}
-                                            </div>
-                                            {s.title && (
-                                              <div className="text-frost/60">{s.title}</div>
-                                            )}
-                                            {s.company && (
-                                              <div className="text-frost/50">{s.company}</div>
-                                            )}
-                                          </div>
-                                        ))}
-                                      </div>
-                                    )}
+                                    <p className="mt-2 text-[11px] text-frost/70 font-mono leading-relaxed">
+                                      {item.details}
+                                    </p>
                                   </details>
                                 )}
                               </div>
