@@ -78,9 +78,38 @@ const days: Day[] = [
       {
         time: "7:00 – 7:30 PM",
         timeMono: "7:00 PM",
-        title: "Panel · Where Worlds Collide",
+        title: "Panel · From Culture to Commerce: How Culture Is Rewriting the Creator Economy",
+        note: "Sponsored by Zynga. Founders, brands, and game-industry leaders on where the creator economy actually stands today.",
+        details:
+          "Culture sets the pace for streaming, and the creator economy is where it shows up first. This panel brings together Founders, brands and game-industry leaders for an honest look at where things stand today: what's real, what's hype and what works. They'll get into how brands, game studios, agencies and music and entertainment companies are working with creators. They'll also cover why Atlanta keeps shaping what comes next.",
         kind: "panel",
         viewers: "1.2k",
+        speakers: [
+          {
+            role: "moderator",
+            name: "Krystal Gardner",
+            title: "Creative Director & Entertainment Strategist",
+            company: "",
+          },
+          {
+            role: "speaker",
+            name: "Amelia Avery",
+            title: "Sr. Manager, Global Inclusion & Impact",
+            company: "Zynga",
+          },
+          {
+            role: "speaker",
+            name: "Brandon Butler",
+            title: "Founder & CEO",
+            company: "Butter.ATL",
+          },
+          {
+            role: "speaker",
+            name: "Ryan Johnson",
+            title: "Founder & CEO",
+            company: "Cxmmunity",
+          },
+        ],
       },
       {
         time: "7:30 – 8:00 PM",
@@ -508,6 +537,17 @@ function DayStream({
                     })}
                   </div>
                 )}
+                {item.details && (
+                  <details className="group mt-3">
+                    <summary className="cursor-pointer list-none font-mono text-[9px] uppercase tracking-[0.25em] text-[#4DD8F0] hover:text-frost transition-colors inline-flex items-center gap-1">
+                      <span className="group-open:hidden">▸ full description</span>
+                      <span className="hidden group-open:inline">▾ hide description</span>
+                    </summary>
+                    <p className="mt-2 text-[11px] text-frost/70 font-mono leading-relaxed">
+                      {item.details}
+                    </p>
+                  </details>
+                )}
               </div>
 
               {/* Viewers + kind */}
@@ -821,6 +861,19 @@ export default function SchedulePage() {
                                     );
                                   })}
                                 </div>
+                              )}
+
+                              {/* Full description toggle */}
+                              {item.details && (
+                                <details className="group mt-3">
+                                  <summary className="cursor-pointer list-none font-mono text-[9px] uppercase tracking-[0.25em] text-[#4DD8F0] hover:text-frost transition-colors inline-flex items-center gap-1">
+                                    <span className="group-open:hidden">▸ full description</span>
+                                    <span className="hidden group-open:inline">▾ hide description</span>
+                                  </summary>
+                                  <p className="mt-2 text-[11px] md:text-xs text-frost/70 font-mono leading-relaxed">
+                                    {item.details}
+                                  </p>
+                                </details>
                               )}
 
                               {/* Register CTA (per-item) */}
