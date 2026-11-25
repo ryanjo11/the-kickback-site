@@ -30,6 +30,7 @@ type ScheduleItem = {
   timeMono: string;
   title: string;
   note?: string;
+  details?: string;
   kind: Kind;
   viewers?: string;
   speakers?: Speaker[];
@@ -175,26 +176,46 @@ const days: Day[] = [
       note: "Workshops running on the third floor for executives, founders, and decision-makers.",
       items: [
         {
-          time: "12:30 – 1:30 PM",
-          timeMono: "12:30 PM",
-          title: "Executive Workshop 1: Scaling Your Business as a Creator & Creative Entrepreneur",
+          time: "2:00 – 3:00 PM",
+          timeMono: "2:00 PM",
+          title: "Stream With Purpose: Turning Your Platform Into Impact",
+          note: "Turn your streams, content, and fandom into real impact.",
+          details:
+            "Your audience is more than a number. It's a community you can mobilize. In this hands-on workshop, creators will learn how to turn streams, content and fandom into real impact, from charity streams to community drives, while growing an audience that actually cares.",
           kind: "panel",
           viewers: "invite",
           speakers: [
             {
               role: "speaker",
-              name: "Ryan Johnson",
-              title: "Founder & CEO",
-              company: "Cxmmunity",
+              name: "David Echeverria",
+              title: "Founder Partner",
+              company: "Village Esports & Entertainment",
+            },
+            {
+              role: "speaker",
+              name: "Jihan Johnston-McGlotten",
+              title: "Managing Director",
+              company: "Beyond Code Collective",
             },
           ],
         },
         {
-          time: "2:30 – 3:30 PM",
-          timeMono: "2:30 PM",
-          title: "Executive Workshop 2: Navigating Brand Deals & Partnerships",
+          time: "4:00 – 5:00 PM",
+          timeMono: "4:00 PM",
+          title: "Creator to CEO: Building the Business Behind Your Brand",
+          note: "Treat your content like the business it already is.",
+          details:
+            "Your content is already a business, so it's time to treat it like one. This hands-on workshop walks creators through setting up the right business foundation and getting ready for funding, from grants and creator funds to brand deals and investors.",
           kind: "panel",
           viewers: "invite",
+          speakers: [
+            {
+              role: "speaker",
+              name: "Warren Davis",
+              title: "Co-Founder & CFO",
+              company: "Cxmmunity",
+            },
+          ],
         },
       ],
     },
@@ -540,6 +561,39 @@ function DayStream({
                       {item.note}
                     </div>
                   )}
+                  {(item.details || (item.speakers && item.speakers.length > 0)) && (
+                    <details className="group mt-2">
+                      <summary className="cursor-pointer list-none font-mono text-[9px] uppercase tracking-[0.25em] text-[#4DD8F0] hover:text-frost transition-colors inline-flex items-center gap-1">
+                        <span className="group-open:hidden">▸ details + speakers</span>
+                        <span className="hidden group-open:inline">▾ hide</span>
+                      </summary>
+                      {item.details && (
+                        <p className="mt-2 text-[11px] text-frost/70 font-mono leading-relaxed">
+                          {item.details}
+                        </p>
+                      )}
+                      {item.speakers && item.speakers.length > 0 && (
+                        <div className="mt-3 flex flex-wrap gap-2">
+                          {item.speakers.map((s, si) => (
+                            <div
+                              key={si}
+                              className="border border-white/10 bg-ink/40 px-2.5 py-1.5 text-[10px] font-mono leading-tight"
+                            >
+                              <div className="font-display text-[11px] uppercase text-frost">
+                                {s.name}
+                              </div>
+                              {s.title && (
+                                <div className="text-frost/60">{s.title}</div>
+                              )}
+                              {s.company && (
+                                <div className="text-frost/50">{s.company}</div>
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </details>
+                  )}
                 </div>
                 <div className="col-span-3 text-right">
                   <span className="font-mono text-[9px] uppercase tracking-widest text-[#D9252A]">
@@ -822,6 +876,39 @@ export default function SchedulePage() {
                                   <div className="text-[10px] text-frost/50 mt-0.5 font-mono leading-snug">
                                     {item.note}
                                   </div>
+                                )}
+                                {(item.details || (item.speakers && item.speakers.length > 0)) && (
+                                  <details className="group mt-2">
+                                    <summary className="cursor-pointer list-none font-mono text-[9px] uppercase tracking-[0.25em] text-[#4DD8F0] hover:text-frost transition-colors inline-flex items-center gap-1">
+                                      <span className="group-open:hidden">▸ details + speakers</span>
+                                      <span className="hidden group-open:inline">▾ hide</span>
+                                    </summary>
+                                    {item.details && (
+                                      <p className="mt-2 text-[11px] text-frost/70 font-mono leading-relaxed">
+                                        {item.details}
+                                      </p>
+                                    )}
+                                    {item.speakers && item.speakers.length > 0 && (
+                                      <div className="mt-3 flex flex-wrap gap-2">
+                                        {item.speakers.map((s, si) => (
+                                          <div
+                                            key={si}
+                                            className="border border-white/10 bg-ink/40 px-2.5 py-1.5 text-[10px] font-mono leading-tight"
+                                          >
+                                            <div className="font-display text-[11px] uppercase text-frost">
+                                              {s.name}
+                                            </div>
+                                            {s.title && (
+                                              <div className="text-frost/60">{s.title}</div>
+                                            )}
+                                            {s.company && (
+                                              <div className="text-frost/50">{s.company}</div>
+                                            )}
+                                          </div>
+                                        ))}
+                                      </div>
+                                    )}
+                                  </details>
                                 )}
                               </div>
                             </li>
